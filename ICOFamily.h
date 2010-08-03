@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-/*! 
+/** @typedef 
  Some predefined sizes commonly used in ICO files 
  */
 typedef enum _kICOFamilyElement {
