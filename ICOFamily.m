@@ -11,11 +11,12 @@
 	// We use NSBitmapImageRep so we can get some extra specifications required by the ICO file type
 
 @implementation ICOFamily
+@synthesize elements;
 #pragma mark -
 #pragma mark Initializers
 - init {
 	if ((self = [super init])) {
-		elements=[[NSMutableDictionary alloc] init];
+		self.elements=[[NSMutableDictionary alloc] init];
 		
 		//NSImage *im = [NSImage imageNamed:@"NSApplicationIcon"]; // That was for testing
 		//[self setElements:kICOFamilyAllElements fromImage:im]; // For Testing
@@ -397,13 +398,7 @@
 #pragma mark NSCopying
 - (id)copyWithZone:(NSZone*)zone {
 	ICOFamily *nf = [[ICOFamily allocWithZone:zone] init];
-	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily256Element] copyWithZone:zone] forElement:kICOFamily256Element];
-	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily128Element] copyWithZone:zone] forElement:kICOFamily128Element];
-	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily64Element] copyWithZone:zone] forElement:kICOFamily64Element];
-	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily48Element] copyWithZone:zone] forElement:kICOFamily48Element];
-	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily32Element] copyWithZone:zone] forElement:kICOFamily32Element];
-	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily24Element]  copyWithZone:zone] forElement:kICOFamily24Element];
-	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily16Element] copyWithZone:zone] forElement:kICOFamily16Element];
+	nf.elements=self.elements;
 	return nf;
 }
 @end

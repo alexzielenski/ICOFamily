@@ -15,7 +15,17 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
-	ICOFamily *fam = [ICOFamily familyWithImage:[NSImage imageNamed:@"NSApplicationIcon"]];
+		
+	ICOFamily *fam = [ICOFamily familyWithImage:[NSImage imageNamed:@"Iconolatrous"]];
+	
+	NSImage *ni = [[NSImage alloc] initWithSize:NSMakeSize(57, 57)];
+	[ni lockFocus];
+	[[NSImage imageNamed:@"NSApplicationIcon"] drawInRect:NSMakeRect(0, 0, 57, 57)
+											fromRect:NSZeroRect
+										   operation:NSCompositeSourceOver
+											fraction:1.0];
+	[ni unlockFocus];
+	[fam setImage:ni forCustomSize:ni.size];
 	[fam.data writeToFile:@"/Users/Alex/Desktop/lol2.ico" atomically:NO];
 }
 

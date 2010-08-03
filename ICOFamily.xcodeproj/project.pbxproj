@@ -13,6 +13,7 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		FAB24F1B120760BB00003D13 /* ICOFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB24F1A120760BB00003D13 /* ICOFamily.m */; };
+		FAB253B41207B88000003D13 /* Iconolatrous.icns in Resources */ = {isa = PBXBuildFile; fileRef = FAB253B31207B88000003D13 /* Iconolatrous.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8D1107320486CEB800E47090 /* ICOFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICOFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB24F19120760BB00003D13 /* ICOFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICOFamily.h; sourceTree = "<group>"; };
 		FAB24F1A120760BB00003D13 /* ICOFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICOFamily.m; sourceTree = "<group>"; };
+		FAB253B31207B88000003D13 /* Iconolatrous.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Iconolatrous.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAB253B31207B88000003D13 /* Iconolatrous.icns */,
 				8D1107310486CEB800E47090 /* ICOFamily-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -166,6 +169,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				FAB253B41207B88000003D13 /* Iconolatrous.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

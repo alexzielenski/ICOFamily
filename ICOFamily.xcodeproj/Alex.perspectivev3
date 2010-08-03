@@ -290,11 +290,12 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>5</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -328,6 +329,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -345,16 +348,17 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FAB253AE1207B7BC00003D13</string>
+										<string>FAB253D71207BBAC00003D13</string>
 										<key>history</key>
 										<array>
 											<string>FAB24F3C1207619A00003D13</string>
 											<string>FAB24F3D1207619A00003D13</string>
 											<string>FAB2526D1207841F00003D13</string>
-											<string>FAB2538E1207B63900003D13</string>
 											<string>FAB253941207B6F300003D13</string>
-											<string>FAB2539B1207B70B00003D13</string>
-											<string>FAB253AD1207B7B300003D13</string>
+											<string>FAB253B71207B88F00003D13</string>
+											<string>FAB253D41207BBAC00003D13</string>
+											<string>FAB253D51207BBAC00003D13</string>
+											<string>FAB253D61207BBAC00003D13</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -653,7 +657,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>302495676.14600801</real>
+	<real>302496684.61984497</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -670,6 +674,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>FAB253D21207B9FB00003D13</string>
 		<string>FAB24F671207667E00003D13</string>
 		<string>FAB24F681207667E00003D13</string>
 		<string>/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.xcodeproj</string>

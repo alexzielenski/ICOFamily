@@ -24,6 +24,7 @@ typedef NSUInteger kICOFamilyElement;
 @interface ICOFamily: NSObject <NSCopying> {
 	NSMutableDictionary *elements;
 }
+@property (nonatomic, retain) NSMutableDictionary *elements;
 - initWithImage:(NSImage*)image;
 - initWithBitmapImageRep:(NSBitmapImageRep*)rep;
 - initWithData:(NSData*)data;
