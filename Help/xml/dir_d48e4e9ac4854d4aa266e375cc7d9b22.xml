@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.1">
+  <compounddef id="dir_d48e4e9ac4854d4aa266e375cc7d9b22" kind="dir">
+    <compoundname>Documents/Source Code/Git/</compoundname>
+    <innerdir refid="dir_2935a8faaa8334342947be629be6eb3a">Documents/Source Code/Git/ICOFamily/</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/Alex/Documents/Source Code/Git/"/>
+  </compounddef>
+</doxygen>

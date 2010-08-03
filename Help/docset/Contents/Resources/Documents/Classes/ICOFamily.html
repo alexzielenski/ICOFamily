@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>ICOFamily class reference</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <meta name="generator" content="appledoc" />
+</head>
+<body>
+  <div id="mainContainer">
+    <h1>ICOFamily class reference</h1>
+    <table summary="Basic information" id="classInfo">
+      <tr class="alt">
+        <td><label id="classDeclaration">Inherits from</label></td>
+        <td>NSObject</td>
+      </tr>
+      <tr>
+        <td><label id="classDeclaration">Declared in</label></td>
+        <td>ICOFamily.h</td>
+      </tr>
+    </table>
+      <h2>Overview</h2>
+<p>A class for saving an ICO file using any size under 256 pixels. </p>
+      <h2>Tasks</h2>
+      <h3>Getting Special Representations</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#elements>elements</a></code>
+            <span class="specialType">property</span>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#imageWithAllReps>- imageWithAllReps</a></code>
+          </span>
+        </li>
+      </ul>
+      <h3>Creating and Initializing ICOFamilies</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#initWithImage:>- initWithImage:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#initWithBitmapImageRep:>- initWithBitmapImageRep:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#initWithData:>- initWithData:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#family>+ family</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#familyWithImage:>+ familyWithImage:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#familyWithBitmapImageRep:>+ familyWithBitmapImageRep:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#familyWithData:>+ familyWithData:</a></code>
+          </span>
+        </li>
+      </ul>
+      <h3>Using the ICOFamily Elements</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#setImage:forElement:>- setImage:forElement:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#setBitmapImageRep:forElement:>- setBitmapImageRep:forElement:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#setData:forElement:>- setData:forElement:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#setElements:fromImage:>- setElements:fromImage:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#dataForElement:>- dataForElement:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#imageForElement:>- imageForElement:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#bitmapImageRepForElement:>- bitmapImageRepForElement:</a></code>
+          </span>
+        </li>
+      </ul>
+      <h3>Using Custom Image Sizes</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#setImage:forCustomSize:>- setImage:forCustomSize:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#setBitmapImageRep:forCustomSize:>- setBitmapImageRep:forCustomSize:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#setData:forCustomSize:>- setData:forCustomSize:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#dataForCustomSize:>- dataForCustomSize:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#imageForCustomSize:>- imageForCustomSize:</a></code>
+          </span>
+        </li>
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#bitmapImageRepForCustomSize:>- bitmapImageRepForCustomSize:</a></code>
+          </span>
+        </li>
+      </ul>
+      <h3>Writing the ICO.</h3>
+      <ul class="methods">
+        <li>
+          <span class="tooltipRegion">
+            <code><a href=#data>- data</a></code>
+          </span>
+        </li>
+      </ul>
+      <h2>Class methods</h2>
+      <h3><a name="family"></a>family</h3>
+      <code class="methodDeclaration">+ (id)family</code>
+      <h5>Discussion</h5>
+<p>Creates an <code><a href="">ICOFamily</a></code> instance and returns it autoreleased. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#familyWithImage:">+ familyWithImage:</a></code></li>
+        <li><code><a href="#familyWithBitmapImageRep:">+ familyWithBitmapImageRep:</a></code></li>
+        <li><code><a href="#familyWithData:">+ familyWithData:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="familyWithImage:"></a>familyWithImage:</h3>
+      <code class="methodDeclaration">+ (id)familyWithImage:(NSImage *)        <span class="parameter">image</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>image</dt>
+        <dd><p>The image to initially set. </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns an autoreleased <code><a href="">ICOFamily</a></code> instance. </p>
+      <h5>Discussion</h5>
+<p>Creates an <code><a href="">ICOFamily</a></code> instance and returns it autoreleased after setting the image.</p>
+<p>      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#family">+ family</a></code></li>
+        <li><code><a href="#familyWithBitmapImageRep:">+ familyWithBitmapImageRep:</a></code></li>
+        <li><code><a href="#familyWithData:">+ familyWithData:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="familyWithBitmapImageRep:"></a>familyWithBitmapImageRep:</h3>
+      <code class="methodDeclaration">+ (id)familyWithBitmapImageRep:(NSBitmapImageRep *)        <span class="parameter">rep</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>rep</dt>
+        <dd><p>The <code>NSBitmapImageRep</code> to initially set. </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns an autoreleased <code><a href="">ICOFamily</a></code> instance. </p>
+      <h5>Discussion</h5>
+<p>Creates an <code><a href="">ICOFamily</a></code> instance and returns it autoreleased after setting the <code>NSBitmapImageRep</code>.</p>
+<p>      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#family">+ family</a></code></li>
+        <li><code><a href="#familyWithImage:">+ familyWithImage:</a></code></li>
+        <li><code><a href="#familyWithData:">+ familyWithData:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="familyWithData:"></a>familyWithData:</h3>
+      <code class="methodDeclaration">+ (id)familyWithData:(NSData *)        <span class="parameter">data</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>data</dt>
+        <dd><p>The data to initially set. </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns an autoreleased <code><a href="">ICOFamily</a></code> instance. </p>
+      <h5>Discussion</h5>
+<p>Creates an <code><a href="">ICOFamily</a></code> instance and returns it autoreleased after setting the data.</p>
+<p>      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#family">+ family</a></code></li>
+        <li><code><a href="#familyWithBitmapImageRep:">+ familyWithBitmapImageRep:</a></code></li>
+        <li><code><a href="#familyWithImage:">+ familyWithImage:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h2>Instance methods</h2>
+      <h3><a name="imageWithAllReps"></a>imageWithAllReps</h3>
+      <code class="methodDeclaration">- (NSImage *)imageWithAllReps</code>
+      <h5>Return value</h5>
+<p>Returns an autoreleased <code>NSImage</code> instance with all of the representations retrieved from <code>elements</code></p>
+      <h5>Discussion</h5>
+<p>Gets an image with all of the representations of the <code><a href="">ICOFamily</a></code> instance. If no elements have been set, returns a blank NSImage. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#elements">elements</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="initWithImage:"></a>initWithImage:</h3>
+      <code class="methodDeclaration">- (id)initWithImage:(NSImage *)        <span class="parameter">image</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>image</dt>
+        <dd><p>the image to set. </p>
+</dd>
+      </dl>
+      <h5>Discussion</h5>
+<p>Defines an <code><a href="">ICOFamily</a></code> and sets an image using the setImage: method </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setImage:forElement:">- setImage:forElement:</a></code></li>
+        <li><code><a href="#familyWithImage:">+ familyWithImage:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="initWithBitmapImageRep:"></a>initWithBitmapImageRep:</h3>
+      <code class="methodDeclaration">- (id)initWithBitmapImageRep:(NSBitmapImageRep *)        <span class="parameter">rep</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>rep</dt>
+        <dd><p>the <code>NSBitmapImageRep</code> to set. </p>
+</dd>
+      </dl>
+      <h5>Discussion</h5>
+<p>Defines an <code><a href="">ICOFamily</a></code> and sets an image using the setBitmapImageRep: method </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</a></code></li>
+        <li><code><a href="#familyWithBitmapImageRep:">+ familyWithBitmapImageRep:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="initWithData:"></a>initWithData:</h3>
+      <code class="methodDeclaration">- (id)initWithData:(NSData *)        <span class="parameter">data</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>data</dt>
+        <dd><p>the data to set. </p>
+</dd>
+      </dl>
+      <h5>Discussion</h5>
+<p>Defines an <code><a href="">ICOFamily</a></code> and sets an image using the setData: method </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setData:forElement:">- setData:forElement:</a></code></li>
+        <li><code><a href="#familyWithData:">+ familyWithData:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="setImage:forElement:"></a>setImage:forElement:</h3>
+      <code class="methodDeclaration">- (void)setImage:(NSImage *)        <span class="parameter">image</span>
+ forElement:(kICOFamilyElement)        <span class="parameter">element</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>image</dt>
+        <dd><p>The image to set for the specified element. </p>
+</dd>
+        <dt>element</dt>
+        <dd><p>The element to set the image as.</p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns an autoreleased <code><a href="">ICOFamily</a></code> instance. </p>
+      <h5>Discussion</h5>
+<p>Sets the image for the specified <code>kICOFamilyElement</code></p>
+<p>      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</a></code></li>
+        <li><code><a href="#setData:forElement:">- setData:forElement:</a></code></li>
+        <li><code><a href="#imageForElement:">- imageForElement:</a></code></li>
+        <li><code><a href="#dataForElement:">- dataForElement:</a></code></li>
+        <li><code><a href="#bitmapImageRepForElement:">- bitmapImageRepForElement:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="setBitmapImageRep:forElement:"></a>setBitmapImageRep:forElement:</h3>
+      <code class="methodDeclaration">- (void)setBitmapImageRep:(NSBitmapImageRep *)        <span class="parameter">rep</span>
+ forElement:(kICOFamilyElement)        <span class="parameter">element</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>rep</dt>
+        <dd><p>The rep to set for the specified element. </p>
+</dd>
+        <dt>element</dt>
+        <dd><p>The element to set the image as.</p>
+</dd>
+      </dl>
+      <h5>Discussion</h5>
+<p>Sets the @ NSBitmapImageRep for the specified <code>kICOFamilyElement</code></p>
+<p>      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setImage:forElement:">- setImage:forElement:</a></code></li>
+        <li><code><a href="#setData:forElement:">- setData:forElement:</a></code></li>
+        <li><code><a href="#imageForElement:">- imageForElement:</a></code></li>
+        <li><code><a href="#dataForElement:">- dataForElement:</a></code></li>
+        <li><code><a href="#bitmapImageRepForElement:">- bitmapImageRepForElement:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="setData:forElement:"></a>setData:forElement:</h3>
+      <code class="methodDeclaration">- (void)setData:(NSData *)        <span class="parameter">data</span>
+ forElement:(kICOFamilyElement)        <span class="parameter">element</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>data</dt>
+        <dd><p>The data to set for the specified element. </p>
+</dd>
+        <dt>element</dt>
+        <dd><p>The element to set the image as.</p>
+</dd>
+      </dl>
+      <h5>Discussion</h5>
+<p>Sets the data for the specified <code>kICOFamilyElement</code></p>
+<p>      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</a></code></li>
+        <li><code><a href="#setImage:forElement:">- setImage:forElement:</a></code></li>
+        <li><code><a href="#imageForElement:">- imageForElement:</a></code></li>
+        <li><code><a href="#dataForElement:">- dataForElement:</a></code></li>
+        <li><code><a href="#bitmapImageRepForElement:">- bitmapImageRepForElement:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="setElements:fromImage:"></a>setElements:fromImage:</h3>
+      <code class="methodDeclaration">- (void)setElements:(kICOFamilyElement)        <span class="parameter">element</span>
+ fromImage:(NSImage *)        <span class="parameter">image</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>element</dt>
+        <dd><p>THe Element(s) to resize and set the image to. </p>
+</dd>
+        <dt>image</dt>
+        <dd><p>The image to set to Element</p>
+</dd>
+      </dl>
+      <h5>Discussion</h5>
+<p><ul>
+<li><p>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing.</p>
+</li>
+</ul>
+</p>
+<p><ul>
+<li><p>The blitwise OR operator can be used to specify multiple sizes. Additionally you can use the <code>kICOFamilyAllElements</code></p>
+</li>
+</ul>
+</p>
+<p>      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</a></code></li>
+        <li><code><a href="#setData:forCustomSize:">- setData:forCustomSize:</a></code></li>
+        <li><code><a href="#dataForCustomSize:">- dataForCustomSize:</a></code></li>
+        <li><code><a href="#imageForCustomSize:">- imageForCustomSize:</a></code></li>
+        <li><code><a href="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="dataForElement:"></a>dataForElement:</h3>
+      <code class="methodDeclaration">- (NSData *)dataForElement:(kICOFamilyElement)        <span class="parameter">element</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>element</dt>
+        <dd><p>The element of which the returned data is for </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns the PNG data for the element </p>
+      <h5>Discussion</h5>
+<p>Gets the PNG representation of the specified <code>kICOFamilyElement</code>. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#imageForElement:">- imageForElement:</a></code></li>
+        <li><code><a href="#bitmapImageRepForElement:">- bitmapImageRepForElement:</a></code></li>
+        <li><code><a href="#setData:forElement:">- setData:forElement:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="imageForElement:"></a>imageForElement:</h3>
+      <code class="methodDeclaration">- (NSImage *)imageForElement:(kICOFamilyElement)        <span class="parameter">element</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>element</dt>
+        <dd><p>The element of which the returned image is for </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns the <code>NSImage</code> value for the specified element. </p>
+      <h5>Discussion</h5>
+<p>Gets the <code>NSImage</code> representation of the specified <code>kICOFamilyElement</code>. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#dataForElement:">- dataForElement:</a></code></li>
+        <li><code><a href="#bitmapImageRepForElement:">- bitmapImageRepForElement:</a></code></li>
+        <li><code><a href="#setImage:forElement:">- setImage:forElement:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="bitmapImageRepForElement:"></a>bitmapImageRepForElement:</h3>
+      <code class="methodDeclaration">- (NSBitmapImageRep *)bitmapImageRepForElement:(kICOFamilyElement)        <span class="parameter">element</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>element</dt>
+        <dd><p>The element of which the returned <code>NSBitmapImageRep</code> is for </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns the <code>NSBitmapImageRep</code> for the specified element </p>
+      <h5>Discussion</h5>
+<p>Gets the <code>NSBitmapImageRep</code> of the specified <code>kICOFamilyElement</code>. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#imageForElement:">- imageForElement:</a></code></li>
+        <li><code><a href="#dataForElement:">- dataForElement:</a></code></li>
+        <li><code><a href="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="setImage:forCustomSize:"></a>setImage:forCustomSize:</h3>
+      <code class="methodDeclaration">- (void)setImage:(NSImage *)        <span class="parameter">image</span>
+ forCustomSize:(NSSize)        <span class="parameter">size</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>image</dt>
+        <dd><p>Image to set to the specified size </p>
+</dd>
+        <dt>size</dt>
+        <dd><p>Size to set the image to</p>
+</dd>
+      </dl>
+      <h5>Discussion</h5>
+<p>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</a></code></li>
+        <li><code><a href="#setData:forCustomSize:">- setData:forCustomSize:</a></code></li>
+        <li><code><a href="#dataForCustomSize:">- dataForCustomSize:</a></code></li>
+        <li><code><a href="#imageForCustomSize:">- imageForCustomSize:</a></code></li>
+        <li><code><a href="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="setBitmapImageRep:forCustomSize:"></a>setBitmapImageRep:forCustomSize:</h3>
+      <code class="methodDeclaration">- (void)setBitmapImageRep:(NSBitmapImageRep *)        <span class="parameter">rep</span>
+ forCustomSize:(NSSize)        <span class="parameter">size</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>rep</dt>
+        <dd><p><code>NSBitmapImageRep</code> to set to the specified size </p>
+</dd>
+        <dt>size</dt>
+        <dd><p>Size to set the image repersentation to</p>
+</dd>
+      </dl>
+      <h5>Discussion</h5>
+<p>The size must not be NSZeroSize and the image's pixel size and the specified size must match or this will do nothing. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setImage:forCustomSize:">- setImage:forCustomSize:</a></code></li>
+        <li><code><a href="#setData:forCustomSize:">- setData:forCustomSize:</a></code></li>
+        <li><code><a href="#dataForCustomSize:">- dataForCustomSize:</a></code></li>
+        <li><code><a href="#imageForCustomSize:">- imageForCustomSize:</a></code></li>
+        <li><code><a href="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="setData:forCustomSize:"></a>setData:forCustomSize:</h3>
+      <code class="methodDeclaration">- (void)setData:(NSData *)        <span class="parameter">data</span>
+ forCustomSize:(NSSize)        <span class="parameter">size</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>data</dt>
+        <dd><p>Data to set to the specified size </p>
+</dd>
+        <dt>size</dt>
+        <dd><p>Size to set the image to</p>
+</dd>
+      </dl>
+      <h5>Discussion</h5>
+<p>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</a></code></li>
+        <li><code><a href="#setImage:forCustomSize:">- setImage:forCustomSize:</a></code></li>
+        <li><code><a href="#dataForCustomSize:">- dataForCustomSize:</a></code></li>
+        <li><code><a href="#imageForCustomSize:">- imageForCustomSize:</a></code></li>
+        <li><code><a href="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="dataForCustomSize:"></a>dataForCustomSize:</h3>
+      <code class="methodDeclaration">- (NSData *)dataForCustomSize:(NSSize)        <span class="parameter">size</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>size</dt>
+        <dd><p>The size the get the data for. </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns the data for the specified size.</p>
+      <h5>Discussion</h5>
+<p>Gets an <code>NSData</code> instance for the specified size. If the specified size doesn't exist, returns nil. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#imageForCustomSize:">- imageForCustomSize:</a></code></li>
+        <li><code><a href="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</a></code></li>
+        <li><code><a href="#setData:forCustomSize:">- setData:forCustomSize:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="imageForCustomSize:"></a>imageForCustomSize:</h3>
+      <code class="methodDeclaration">- (NSImage *)imageForCustomSize:(NSSize)        <span class="parameter">size</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>size</dt>
+        <dd><p>The size the get the image for. </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns the image for the specified size.</p>
+      <h5>Discussion</h5>
+<p>If the specified size doesn't exist, returns nil. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#dataForCustomSize:">- dataForCustomSize:</a></code></li>
+        <li><code><a href="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</a></code></li>
+        <li><code><a href="#setImage:forCustomSize:">- setImage:forCustomSize:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="bitmapImageRepForCustomSize:"></a>bitmapImageRepForCustomSize:</h3>
+      <code class="methodDeclaration">- (NSBitmapImageRep *)bitmapImageRepForCustomSize:(NSSize)        <span class="parameter">size</span>
+</code>
+      <h5>Parameters</h5>
+      <dl class="parameterList">
+        <dt>size</dt>
+        <dd><p>The size the get the <code>NSBitmapImageRep</code> for. </p>
+</dd>
+      </dl>
+      <h5>Return value</h5>
+<p>Returns the <code>NSBitmapImageRep</code> for the specified size.</p>
+      <h5>Discussion</h5>
+<p>If the specified size doesn't exist, returns nil. </p>
+      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#imageForCustomSize:">- imageForCustomSize:</a></code></li>
+        <li><code><a href="#dataForCustomSize:">- dataForCustomSize:</a></code></li>
+        <li><code><a href="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h3><a name="data"></a>data</h3>
+      <code class="methodDeclaration">- (NSData *)data</code>
+      <h5>Return value</h5>
+<p>Returns the raw data for the ICO file for use when saving. </p>
+      <h5>Discussion</h5>
+<p>Gets the raw <code>NSData</code> object for the ICO file If there are no representations set, this returns nil.</p>
+<p>      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+      <h2>Properties</h2>
+      <h3><a name="elements"></a>elements</h3>
+      <code class="methodDeclaration">@property NSMutableDictionary *elements</code>
+      <h5>Return value</h5>
+<p>A dictionary of all of the NSBitmapImageReps that will be used for the ICO file. Keys would either be an <code>NSNumber</code> representation of the element used or a size from NSStringFromSize </p>
+      <h5>Discussion</h5>
+<p>All of the representations go in here, unless they are null.</p>
+<p>      <h5>See also</h5>
+      <ul class="seeAlso">
+        <li><code><a href="#imageWithAllReps">- imageWithAllReps</a></code></li>
+      </ul>
+      <h5>Declared in</h5>
+      <code>ICOFamily.h</code>
+    <hr />
+    <p id="lastUpdated">      (Last updated: 2010-08-03)
+      <br />
+      Back to <a href="../index.html">index</a> / <a href="../hierarchy.html">hierarchy</a>.
+    </p>
+  </div>
+</body>
+</html>

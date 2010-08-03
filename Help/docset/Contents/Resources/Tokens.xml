@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+    <File path="Classes/ICOFamily.html">
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/cl/ICOFamily</TokenIdentifier>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Abstract>A class for saving an ICO file using any size under 256 pixels. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/elements</TokenIdentifier>
+            <Anchor>elements</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>@property NSMutableDictionary *elements</Declaration>
+            <Abstract>All of the representations go in here, unless they are null.</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/imageWithAllReps</TokenIdentifier>
+            <Anchor>imageWithAllReps</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (NSImage *)imageWithAllReps</Declaration>
+            <Abstract>Gets an image with all of the representations of the ICOFamily instance. If no elements have been set, returns a blank NSImage. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/initWithImage:</TokenIdentifier>
+            <Anchor>initWithImage:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (id)initWithImage:(NSImage *)image</Declaration>
+            <Abstract>Defines an ICOFamily and sets an image using the setImage: method </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/initWithBitmapImageRep:</TokenIdentifier>
+            <Anchor>initWithBitmapImageRep:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (id)initWithBitmapImageRep:(NSBitmapImageRep *)rep</Declaration>
+            <Abstract>Defines an ICOFamily and sets an image using the setBitmapImageRep: method </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/initWithData:</TokenIdentifier>
+            <Anchor>initWithData:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (id)initWithData:(NSData *)data</Declaration>
+            <Abstract>Defines an ICOFamily and sets an image using the setData: method </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/family</TokenIdentifier>
+            <Anchor>family</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>+ (id)family</Declaration>
+            <Abstract>Creates an ICOFamily instance and returns it autoreleased. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/familyWithImage:</TokenIdentifier>
+            <Anchor>familyWithImage:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>+ (id)familyWithImage:(NSImage *)image</Declaration>
+            <Abstract>Creates an ICOFamily instance and returns it autoreleased after setting the image.</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/familyWithBitmapImageRep:</TokenIdentifier>
+            <Anchor>familyWithBitmapImageRep:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>+ (id)familyWithBitmapImageRep:(NSBitmapImageRep *)rep</Declaration>
+            <Abstract>Creates an ICOFamily instance and returns it autoreleased after setting the NSBitmapImageRep.</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/familyWithData:</TokenIdentifier>
+            <Anchor>familyWithData:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>+ (id)familyWithData:(NSData *)data</Declaration>
+            <Abstract>Creates an ICOFamily instance and returns it autoreleased after setting the data.</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/setImage:forElement:</TokenIdentifier>
+            <Anchor>setImage:forElement:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (void)setImage:(NSImage *)image forElement:(kICOFamilyElement)element</Declaration>
+            <Abstract>Sets the image for the specified kICOFamilyElement</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/setBitmapImageRep:forElement:</TokenIdentifier>
+            <Anchor>setBitmapImageRep:forElement:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (void)setBitmapImageRep:(NSBitmapImageRep *)rep forElement:(kICOFamilyElement)element</Declaration>
+            <Abstract>Sets the @ NSBitmapImageRep for the specified kICOFamilyElement</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/setData:forElement:</TokenIdentifier>
+            <Anchor>setData:forElement:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (void)setData:(NSData *)data forElement:(kICOFamilyElement)element</Declaration>
+            <Abstract>Sets the data for the specified kICOFamilyElement</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/setElements:fromImage:</TokenIdentifier>
+            <Anchor>setElements:fromImage:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (void)setElements:(kICOFamilyElement)element fromImage:(NSImage *)image</Declaration>
+            <Abstract>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing.The blitwise OR operator can be used to specify multiple sizes. Additionally you can use the kICOFamilyAllElements</Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/dataForElement:</TokenIdentifier>
+            <Anchor>dataForElement:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (NSData *)dataForElement:(kICOFamilyElement)element</Declaration>
+            <Abstract>Gets the PNG representation of the specified kICOFamilyElement. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/imageForElement:</TokenIdentifier>
+            <Anchor>imageForElement:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (NSImage *)imageForElement:(kICOFamilyElement)element</Declaration>
+            <Abstract>Gets the NSImage representation of the specified kICOFamilyElement. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/bitmapImageRepForElement:</TokenIdentifier>
+            <Anchor>bitmapImageRepForElement:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (NSBitmapImageRep *)bitmapImageRepForElement:(kICOFamilyElement)element</Declaration>
+            <Abstract>Gets the NSBitmapImageRep of the specified kICOFamilyElement. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/setImage:forCustomSize:</TokenIdentifier>
+            <Anchor>setImage:forCustomSize:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (void)setImage:(NSImage *)image forCustomSize:(NSSize)size</Declaration>
+            <Abstract>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/setBitmapImageRep:forCustomSize:</TokenIdentifier>
+            <Anchor>setBitmapImageRep:forCustomSize:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (void)setBitmapImageRep:(NSBitmapImageRep *)rep forCustomSize:(NSSize)size</Declaration>
+            <Abstract>The size must not be NSZeroSize and the image's pixel size and the specified size must match or this will do nothing. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/setData:forCustomSize:</TokenIdentifier>
+            <Anchor>setData:forCustomSize:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (void)setData:(NSData *)data forCustomSize:(NSSize)size</Declaration>
+            <Abstract>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/dataForCustomSize:</TokenIdentifier>
+            <Anchor>dataForCustomSize:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (NSData *)dataForCustomSize:(NSSize)size</Declaration>
+            <Abstract>Gets an NSData instance for the specified size. If the specified size doesn't exist, returns nil. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/imageForCustomSize:</TokenIdentifier>
+            <Anchor>imageForCustomSize:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (NSImage *)imageForCustomSize:(NSSize)size</Declaration>
+            <Abstract>If the specified size doesn't exist, returns nil. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/bitmapImageRepForCustomSize:</TokenIdentifier>
+            <Anchor>bitmapImageRepForCustomSize:</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (NSBitmapImageRep *)bitmapImageRepForCustomSize:(NSSize)size</Declaration>
+            <Abstract>If the specified size doesn't exist, returns nil. </Abstract>
+        </Token>
+        <Token>
+            <TokenIdentifier>//apple_ref/occ/instm/ICOFamily/data</TokenIdentifier>
+            <Anchor>data</Anchor>
+            <DeclaredIn>ICOFamily.h</DeclaredIn>
+            <Declaration>- (NSData *)data</Declaration>
+            <Abstract>Gets the raw NSData object for the ICO file If there are no representations set, this returns nil.</Abstract>
+        </Token>
+    </File>
+</Tokens>

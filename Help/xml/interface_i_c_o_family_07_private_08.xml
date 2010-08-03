@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.1">
+  <compounddef id="interface_i_c_o_family_07_private_08" kind="class" prot="public">
+    <compoundname>ICOFamily(Private)</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_i_c_o_family_1aa38775f8066060c52d745d9357820cfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>BOOL</type>
+        <definition>BOOL ICOFamily(Private)::verifyImageOfSize:forElement:</definition>
+        <argsstring>(NSSize size,[forElement] kICOFamilyElement element)</argsstring>
+        <name>verifyImageOfSize:forElement:</name>
+        <param>
+          <type>NSSize</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <attributes>[forElement]</attributes>
+          <type>kICOFamilyElement</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" line="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" line="12" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="12" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_i_c_o_family_1aa38775f8066060c52d745d9357820cfb" prot="public" virt="virtual"><scope>ICOFamily(Private)</scope><name>verifyImageOfSize:forElement:</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

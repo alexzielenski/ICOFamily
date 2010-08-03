@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.1">
+  <compounddef id="dir_2935a8faaa8334342947be629be6eb3a" kind="dir">
+    <compoundname>Documents/Source Code/Git/ICOFamily/</compoundname>
+    <innerfile refid="_i_c_o_family_8h">ICOFamily.h</innerfile>
+    <innerfile refid="_i_c_o_family_8m">ICOFamily.m</innerfile>
+    <innerfile refid="_i_c_o_family_app_delegate_8h">ICOFamilyAppDelegate.h</innerfile>
+    <innerfile refid="_i_c_o_family_app_delegate_8m">ICOFamilyAppDelegate.m</innerfile>
+    <innerfile refid="main_8m">main.m</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/"/>
+  </compounddef>
+</doxygen>
