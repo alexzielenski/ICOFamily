@@ -8,8 +8,7 @@ No documentation yet. I'm probably going to add of the Doxygen tags and generate
 
 ## LICENSE:
 
-Creative Commons 3.0 Attributions Unported License:  
-http://creativecommons.org/licenses/by/3.0/
+Uses [Creative Commons 3.0 Attributes Unported License][3]
 	
 I prefer that I am credited in the About box of your app if you used some of my source code with the following format:  
 Uses [ICOFamily][1] by [Alex Zielenski][2]
@@ -17,5 +16,5 @@ Uses [ICOFamily][1] by [Alex Zielenski][2]
 
 [1]: http://github.com/alexzielenski/ICOFamily  "ICOFamily"
 [2]: http://alexzielenski.com/  "Alex Zielenski"
-
+[3]: http://creativecommons.org/licenses/by/3.0/ "Creative Commons 3.0 Attributes Unported License"
 
