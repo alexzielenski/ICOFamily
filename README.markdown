@@ -9,11 +9,9 @@ No documentation yet. I'm probably going to add of the Doxygen tags and generate
 ## LICENSE:
 
 Creative Commons 3.0 Attributions Unported License:  
-
 http://creativecommons.org/licenses/by/3.0/
 	
-I prefer that I am credited in the About box of your app if you used some of my source code with the following format:
-
+I prefer that I am credited in the About box of your app if you used some of my source code with the following format:  
 Uses [ICOFamily][1] by [Alex Zielenski][2]
 		
 
