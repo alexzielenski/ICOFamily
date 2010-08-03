@@ -398,7 +398,10 @@
 #pragma mark NSCopying
 - (id)copyWithZone:(NSZone*)zone {
 	ICOFamily *nf = [[ICOFamily allocWithZone:zone] init];
-	nf.elements=self.elements;
+	nf.elements=self.elemfileURLWithPath:
+	Initializes and returns a newly created NSURL object as a file URL with a specified path.
+	
+	+ (id)fileURLWithPath:(NSString *)pathents;
 	return nf;
 }
 @end

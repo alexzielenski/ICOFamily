@@ -295,7 +295,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
+									<integer>4</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -318,7 +318,7 @@
 							<real>185</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>291 235 1169 643 0 0 1440 878 </string>
+						<string>188 197 1169 643 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -336,7 +336,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>FAB24F201207610A00003D13</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ICOFamily.m</string>
+								<string>ICOFamily.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -344,11 +344,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>FAB24F211207610A00003D13</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ICOFamily.m</string>
+										<string>ICOFamily.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FAB253D71207BBAC00003D13</string>
+										<string>FAB253EC1207D86D00003D13</string>
 										<key>history</key>
 										<array>
 											<string>FAB24F3C1207619A00003D13</string>
@@ -357,8 +357,8 @@
 											<string>FAB253941207B6F300003D13</string>
 											<string>FAB253B71207B88F00003D13</string>
 											<string>FAB253D41207BBAC00003D13</string>
-											<string>FAB253D51207BBAC00003D13</string>
-											<string>FAB253D61207BBAC00003D13</string>
+											<string>FAB253D81207C9F000003D13</string>
+											<string>FAB253E21207CFB900003D13</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -374,7 +374,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {962, 394}}</string>
 								<key>RubberWindowFrame</key>
-								<string>291 235 1169 643 0 0 1440 878 </string>
+								<string>188 197 1169 643 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -453,7 +453,7 @@
 										<key>Frame</key>
 										<string>{{10, 27}, {962, 176}}</string>
 										<key>RubberWindowFrame</key>
-										<string>291 235 1169 643 0 0 1440 878 </string>
+										<string>188 197 1169 643 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -657,7 +657,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>302496684.61984497</real>
+	<real>302504045.63257003</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -680,7 +680,7 @@
 		<string>/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>291 235 1169 643 0 0 1440 878 </string>
+	<string>188 197 1169 643 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
