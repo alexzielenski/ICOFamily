@@ -41,6 +41,14 @@ typedef NSUInteger kICOFamilyElement;
 - (NSImage*)imageForElement:(kICOFamilyElement)element;
 - (NSBitmapImageRep*)bitmapImageRepForElement:(kICOFamilyElement)element;
 
+- (void)setImage:(NSImage*)image forCustomSize:(NSSize)size;
+- (void)setBitmapImageRep:(NSBitmapImageRep*)rep forCustomSize:(NSSize)size;
+- (void)setData:(NSData*)data forCustomSize:(NSSize)size;
+
+- (NSData*)dataForCustomSize:(NSSize)size;
+- (NSImage*)imageForCustomSize:(NSSize)size;
+- (NSBitmapImageRep*)bitmapImageRepForCustomSize:(NSSize)size;
+
 - (void)setElements:(kICOFamilyElement)element fromImage:(NSImage*)image;
 - (NSImage*)imageWithAllReps;
 

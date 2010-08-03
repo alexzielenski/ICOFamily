@@ -15,8 +15,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
-	ICOFamily *fam = [ICOFamily family];
-	[fam readFromData:[NSData dataWithContentsOfURL:[NSURL fileURLWithPath:@"/Users/Alex/Desktop/lol.ico"]]];
+	ICOFamily *fam = [ICOFamily familyWithImage:[NSImage imageNamed:@"NSApplicationIcon"]];
 	[fam.data writeToFile:@"/Users/Alex/Desktop/lol2.ico" atomically:NO];
 }
 

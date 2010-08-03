@@ -70,6 +70,41 @@
 
 #pragma mark -
 #pragma mark Getting and Setting Representations
+- (void)setImage:(NSImage*)image forCustomSize:(NSSize)size {
+	if (!image)
+		return;
+	[self setData:image.TIFFRepresentation 
+	forCustomSize:size];
+}
+- (void)setBitmapImageRep:(NSBitmapImageRep*)rep forCustomSize:(NSSize)size {
+	if (!rep)
+		return;
+	if (size.width<1||size.height<1)
+		return;
+	if (rep.pixelsWide!=size.width||rep.pixelsHigh!=size.height)
+		return;
+	if (size.width<=0||size.height>=256||size.height<=0||size.width>=256)
+		return; // Maximum dimensions
+	[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace] 
+													renderingIntent:NSColorRenderingIntentPerceptual] forKey:NSStringFromSize(size)];
+}
+- (void)setData:(NSData*)data forCustomSize:(NSSize)size {
+	if (!data)
+		return;
+
+	NSBitmapImageRep *nr = [NSBitmapImageRep imageRepWithData:data];
+	[self setBitmapImageRep:nr forCustomSize:size];
+}
+- (NSData*)dataForCustomSize:(NSSize)size {
+	return [[self bitmapImageRepForCustomSize:size] representationUsingType:NSPNGFileType 
+																 properties:nil];
+}
+- (NSImage*)imageForCustomSize:(NSSize)size {
+	return [[[NSImage alloc] initWithData:[self dataForCustomSize:size]] autorelease];
+}
+- (NSBitmapImageRep*)bitmapImageRepForCustomSize:(NSSize)size {
+	return [self bitmapImageRepForCustomSize:size];
+}
 - (void)setElements:(kICOFamilyElement)element fromImage:(NSImage*)im {
 	if (!im)
 		return;
@@ -196,7 +231,8 @@
 	}
 	if ([self verifyImageOfSize:NSMakeSize(rep.pixelsWide, rep.pixelsHigh) 
 					 forElement:element])
-		[elements setObject:rep forKey:[NSNumber numberWithInteger:element]];
+		[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace] 
+														renderingIntent:NSColorRenderingIntentPerceptual] forKey:[NSNumber numberWithInteger:element]];
 }
 - (void)setData:(NSData*)data forElement:(kICOFamilyElement)element {
 	if (!data)
@@ -276,15 +312,22 @@
 		NSData *bitmapData = [currentRep representationUsingType:NSPNGFileType 
 													  properties:nil];
 			// Image header
-		const char *width = [[NSString stringWithFormat:@"%i", currentRep.pixelsWide] UTF8String];
-		const char *height = [[NSString stringWithFormat:@"%i", currentRep.pixelsWide] UTF8String];
+		
+		int iwidth = currentRep.pixelsWide;
+		if (iwidth==256)
+			iwidth=0;
+		int iheight=currentRep.pixelsHigh;
+		if (iheight==256)
+			iheight=0;
+		const char *width = [[NSString stringWithFormat:@"%i", iwidth] UTF8String];
+		const char *height = [[NSString stringWithFormat:@"%i", iheight] UTF8String];
 		const char *palette = "0";
 		const char *reserved = "0";
 		short planes = currentRep.numberOfPlanes;
 		short bpp = currentRep.bitsPerPixel; // bits per pixel
 		int size = bitmapData.length;
-		[headers appendBytes:width length:sizeof(const char)];
-		[headers appendBytes:height length:sizeof(const char)];
+		[headers appendBytes:width length:sizeof(const char)]; // 0 - 255 and 0 = 256
+		[headers appendBytes:height length:sizeof(const char)]; // 0 - 255 and 0 = 256
 		[headers appendBytes:palette length:sizeof(const char)];
 		[headers appendBytes:reserved length:sizeof(const char)];
 		[headers appendBytes:&planes length:sizeof(short)];
