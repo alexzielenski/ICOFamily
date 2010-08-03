@@ -1,8 +1,5 @@
 ICOFamily
 =======================
-
-## What is ICOFamily?
-
 ICOFamily is a class that I made to save a legitamite ICO file. It deals with all the dirty work.  All you need to do is just set the Images you are using and save it using the provided methods. It manually adds the headers and works with 64 x 64 and 24 x 24 pixel images unlike the built in functions in Core Foundation for saving ICO files.
 
 ## Documentation:
