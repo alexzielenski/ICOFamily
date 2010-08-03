@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.1">
+  <compounddef id="interface_i_c_o_family_app_delegate" kind="class" prot="public">
+    <compoundname>ICOFamilyAppDelegate</compoundname>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="interface_i_c_o_family_app_delegate_1a6972eb01eadcdb1e4b6f589ad405e267" prot="protected" static="no" mutable="no">
+        <type>NSWindow *</type>
+        <definition>NSWindow* ICOFamilyAppDelegate::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.h" line="12" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interface_i_c_o_family_app_delegate_1a5ca43b70a36b086f66e6f47695c2ad5a" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="assign">
+        <type>IBOutlet NSWindow *</type>
+        <definition>IBOutlet NSWindow* ICOFamilyAppDelegate::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <read></read>
+        <write></write>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.h" line="15" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.h" line="11" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.h" bodystart="11" bodyend="-1"/>
+    <listofallmembers>
+      <member refid="interface_i_c_o_family_app_delegate_1a6972eb01eadcdb1e4b6f589ad405e267" prot="protected" virt="non-virtual"><scope>ICOFamilyAppDelegate</scope><name>window</name></member>
+      <member refid="interface_i_c_o_family_app_delegate_1a5ca43b70a36b086f66e6f47695c2ad5a" prot="public" virt="non-virtual"><scope>ICOFamilyAppDelegate</scope><name>window</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

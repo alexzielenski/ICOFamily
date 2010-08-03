@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.1">
+  <compounddef id="_i_c_o_family_app_delegate_8m" kind="file">
+    <compoundname>ICOFamilyAppDelegate.m</compoundname>
+    <includes refid="_i_c_o_family_app_delegate_8h" local="yes">ICOFamilyAppDelegate.h</includes>
+    <includes refid="_i_c_o_family_8h" local="yes">ICOFamily.h</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>ICOFamilyAppDelegate.h</label>
+        <link refid="_i_c_o_family_app_delegate_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ICOFamilyAppDelegate.m</label>
+        <link refid="ICOFamilyAppDelegate.m"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Cocoa/Cocoa.h</label>
+      </node>
+      <node id="13">
+        <label>ICOFamily.h</label>
+        <link refid="_i_c_o_family_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>ICOFamilyAppDelegate.m</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>ICOFamily</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Created<sp/>by<sp/>Alex<sp/>Zielenski<sp/>on<sp/>8/2/10.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>2010<sp/>Alex<sp/>Zielenski.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#import<sp/>&quot;ICOFamilyAppDelegate.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#import<sp/>&quot;ICOFamily.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">@implementation<sp/></highlight><highlight class="normal"><ref refid="interface_i_c_o_family_app_delegate" kindref="compound">ICOFamilyAppDelegate</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">@synthesize</highlight><highlight class="normal"><sp/>window;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">-<sp/>(void)applicationDidFinishLaunching:(NSNotification<sp/>*)aNotification<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Insert<sp/>code<sp/>here<sp/>to<sp/>initialize<sp/>your<sp/>application<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref><sp/>*fam<sp/>=<sp/>[<ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref><sp/><ref refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kindref="member">familyWithImage</ref>:[NSImage<sp/>imageNamed:@&quot;Iconolatrous&quot;]];</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>NSImage<sp/>*ni<sp/>=<sp/>[[NSImage<sp/>alloc]<sp/>initWithSize:NSMakeSize(57,<sp/>57)];</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>[ni<sp/>lockFocus];</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>[[NSImage<sp/>imageNamed:@&quot;NSApplicationIcon&quot;]<sp/>drawInRect:NSMakeRect(0,<sp/>0,<sp/>57,<sp/>57)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fromRect:NSZeroRect</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>operation:NSCompositeSourceOver</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fraction:1.0];</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>[ni<sp/>unlockFocus];</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>[fam<sp/><ref refid="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" kindref="member">setImage</ref>:ni<sp/><ref refid="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" kindref="member">forCustomSize</ref>:ni.size];</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>[fam.data<sp/>writeToFile:@&quot;/Users/Alex/Desktop/lol2.ico&quot;<sp/>atomically:NO];</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">@end</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.m"/>
+  </compounddef>
+</doxygen>

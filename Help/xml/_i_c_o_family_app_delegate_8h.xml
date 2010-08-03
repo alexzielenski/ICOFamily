@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.1">
+  <compounddef id="_i_c_o_family_app_delegate_8h" kind="file">
+    <compoundname>ICOFamilyAppDelegate.h</compoundname>
+    <includes local="no">Cocoa/Cocoa.h</includes>
+    <includedby refid="_i_c_o_family_app_delegate_8m" local="yes">ICOFamilyAppDelegate.m</includedby>
+    <incdepgraph>
+      <node id="7">
+        <label>ICOFamilyAppDelegate.h</label>
+        <link refid="ICOFamilyAppDelegate.h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Cocoa/Cocoa.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="interface_i_c_o_family_app_delegate" prot="public">ICOFamilyAppDelegate</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>ICOFamilyAppDelegate.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>ICOFamily</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Created<sp/>by<sp/>Alex<sp/>Zielenski<sp/>on<sp/>8/2/10.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>2010<sp/>Alex<sp/>Zielenski.<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#import<sp/>&lt;Cocoa/Cocoa.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="interface_i_c_o_family_app_delegate" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">@interface<sp/></highlight><highlight class="normal"><ref refid="interface_i_c_o_family_app_delegate" kindref="compound">ICOFamilyAppDelegate</ref><sp/>:<sp/>NSObject<sp/>&lt;NSApplicationDelegate&gt;<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>NSWindow<sp/>*window;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">@property<sp/>(assign)<sp/>IBOutlet<sp/>NSWindow<sp/>*window;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">@end</highlight></codeline>
+    </programlisting>
+    <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.h"/>
+  </compounddef>
+</doxygen>
