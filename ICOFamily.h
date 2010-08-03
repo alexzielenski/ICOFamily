@@ -21,7 +21,7 @@ enum {
 
 typedef NSUInteger kICOFamilyElement;
 
-@interface ICOFamily : NSObject {
+@interface ICOFamily: NSObject <NSCopying> {
 	NSMutableDictionary *elements;
 }
 - initWithImage:(NSImage*)image;

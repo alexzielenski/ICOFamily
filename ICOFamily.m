@@ -11,6 +11,8 @@
 	// We use NSBitmapImageRep so we can get some extra specifications required by the ICO file type
 
 @implementation ICOFamily
+#pragma mark -
+#pragma mark Initializers
 - init {
 	if ((self = [super init])) {
 		elements=[[NSMutableDictionary alloc] init];
@@ -65,6 +67,9 @@
 	[elements release];
 	[super dealloc];
 }
+
+#pragma mark -
+#pragma mark Getting and Setting Representations
 - (void)setElements:(kICOFamilyElement)element fromImage:(NSImage*)im {
 	if (!im)
 		return;
@@ -243,6 +248,8 @@
 	}
 	return (size.width == desiredSize.width && size.height == desiredSize.height);
 }
+#pragma mark -
+#pragma mark Handling Data
 - (NSData*)data {	
 		// Write the BitmapInfoHeader to the data
 	NSMutableData *data = [NSMutableData data];
@@ -341,5 +348,19 @@
 		
 		NSLog(@"%hi", offset);
 	}
+}
+
+#pragma mark -
+#pragma mark NSCopying
+- (id)copyWithZone:(NSZone*)zone {
+	ICOFamily *nf = [[ICOFamily allocWithZone:zone] init];
+	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily256Element] copyWithZone:zone] forElement:kICOFamily256Element];
+	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily128Element] copyWithZone:zone] forElement:kICOFamily128Element];
+	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily64Element] copyWithZone:zone] forElement:kICOFamily64Element];
+	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily48Element] copyWithZone:zone] forElement:kICOFamily48Element];
+	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily32Element] copyWithZone:zone] forElement:kICOFamily32Element];
+	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily24Element]  copyWithZone:zone] forElement:kICOFamily24Element];
+	[nf setBitmapImageRep:[[self bitmapImageRepForElement:kICOFamily16Element] copyWithZone:zone] forElement:kICOFamily16Element];
+	return nf;
 }
 @end
