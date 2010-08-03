@@ -8,7 +8,7 @@
         <label>Cocoa/Cocoa.h</label>
       </node>
       <node id="15">
-        <label>main.m</label>
+        <label>Documents/Source Code/Git/ICOFamily/main.m</label>
         <link refid="main.m"/>
         <childnode refid="16" relation="include">
         </childnode>

@@ -12,7 +12,7 @@
         </childnode>
       </node>
       <node id="10">
-        <label>ICOFamilyAppDelegate.m</label>
+        <label>Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.m</label>
         <link refid="ICOFamilyAppDelegate.m"/>
         <childnode refid="11" relation="include">
         </childnode>

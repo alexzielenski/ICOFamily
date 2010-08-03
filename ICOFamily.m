@@ -9,6 +9,11 @@
 #import "ICOFamily.h"
 
 	// We use NSBitmapImageRep so we can get some extra specifications required by the ICO file type
+@interface ICOFamily (Private)
+
+- (BOOL)verifyImageOfSize:(NSSize)size forElement:(kICOFamilyElement)element;
+
+@end
 
 @implementation ICOFamily
 @synthesize elements;
@@ -398,10 +403,7 @@
 #pragma mark NSCopying
 - (id)copyWithZone:(NSZone*)zone {
 	ICOFamily *nf = [[ICOFamily allocWithZone:zone] init];
-	nf.elements=self.elemfileURLWithPath:
-	Initializes and returns a newly created NSURL object as a file URL with a specified path.
-	
-	+ (id)fileURLWithPath:(NSString *)pathents;
+	nf.elements=self.elements;
 	return nf;
 }
 @end

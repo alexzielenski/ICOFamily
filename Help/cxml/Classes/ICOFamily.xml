@@ -10,7 +10,59 @@
     </description>
     <sections>
         <section>
-            <name>Other</name>
+            <name>Getting Special Representations</name>
+            <member kind="property">
+                <name>elements</name>
+                <type>NSMutableDictionary *</type>
+                <prototype>@property NSMutableDictionary *elements</prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>All of the representations go in here, unless they are null.</para>
+                        <para></para>
+                    </details>
+                </description>
+                <return>
+                    <para>A dictionary of all of the NSBitmapImageReps that will be used for the ICO file. Keys would either be an <code>NSNumber</code>
+                         representation of the element used or a size from NSStringFromSize </para>
+                </return>
+                <seeAlso>
+                    <item>
+                        <ref id="#imageWithAllReps">- imageWithAllReps</ref>
+                        ; </item>
+                </seeAlso>
+                <selector>elements</selector>
+            </member>
+            <member kind="instance-method">
+                <name>imageWithAllReps</name>
+                <type>NSImage *</type>
+                <prototype>- (NSImage *)imageWithAllReps</prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>Gets an image with all of the representations of the <code>
+                                <ref id="">ICOFamily</ref>
+                            </code>
+                             instance. If no elements have been set, returns a blank NSImage. </para>
+                    </details>
+                </description>
+                <return>
+                    <para>Returns an autoreleased <code>NSImage</code>
+                         instance with all of the representations retrieved from <code>elements</code>
+                    </para>
+                </return>
+                <seeAlso>
+                    <item>
+                        <ref id="#elements">elements</ref>
+                    </item>
+                </seeAlso>
+                <selector>- imageWithAllReps</selector>
+            </member>
+        </section>
+        <section>
+            <name>Creating and Initializing ICOFamilies</name>
             <member kind="instance-method">
                 <name>initWithImage:</name>
                 <type>id</type>
@@ -36,7 +88,7 @@
                 </parameters>
                 <seeAlso>
                     <item>
-                        <ref id="#setImage:">setImage:</ref>
+                        <ref id="#setImage:forElement:">- setImage:forElement:</ref>
                     </item>
                     <item>
                         <ref id="#familyWithImage:">+ familyWithImage:</ref>
@@ -70,7 +122,7 @@
                 </parameters>
                 <seeAlso>
                     <item>
-                        <ref id="#setBitmapImageRep:">setBitmapImageRep:</ref>
+                        <ref id="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</ref>
                     </item>
                     <item>
                         <ref id="#familyWithBitmapImageRep:">+ familyWithBitmapImageRep:</ref>
@@ -103,7 +155,7 @@
                 </parameters>
                 <seeAlso>
                     <item>
-                        <ref id="#setData:">setData:</ref>
+                        <ref id="#setData:forElement:">- setData:forElement:</ref>
                     </item>
                     <item>
                         <ref id="#familyWithData:">+ familyWithData:</ref>
@@ -111,628 +163,6 @@
                 </seeAlso>
                 <selector>- initWithData:</selector>
             </member>
-            <member kind="instance-method">
-                <name>setImage:forElement:</name>
-                <type>void</type>
-                <prototype>- (void)setImage:(NSImage *)<parameter>image</parameter>
-                     forElement:(kICOFamilyElement)<parameter>element</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>Sets the image for the specified <code>kICOFamilyElement</code>
-                        </para>
-                        <para></para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>image</name>
-                        <description>
-                            <para>The image to set for the specified element. </para>
-                        </description>
-                    </param>
-                    <param>
-                        <name>element</name>
-                        <description>
-                            <para>The element to set the image as.</para>
-                        </description>
-                    </param>
-                </parameters>
-                <return>
-                    <para>Returns an autoreleased <code>
-                            <ref id="">ICOFamily</ref>
-                        </code>
-                         instance. </para>
-                </return>
-                <seeAlso>
-                    <item>
-                        <ref id="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setData:forElement:">- setData:forElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#imageForElement:">- imageForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#dataForElement:">- dataForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- setImage:forElement:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>setBitmapImageRep:forElement:</name>
-                <type>void</type>
-                <prototype>- (void)setBitmapImageRep:(NSBitmapImageRep *)<parameter>rep</parameter>
-                     forElement:(kICOFamilyElement)<parameter>element</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>Sets the @ NSBitmapImageRep for the specified <code>kICOFamilyElement</code>
-                        </para>
-                        <para></para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>rep</name>
-                        <description>
-                            <para>The rep to set for the specified element. </para>
-                        </description>
-                    </param>
-                    <param>
-                        <name>element</name>
-                        <description>
-                            <para>The element to set the image as.</para>
-                        </description>
-                    </param>
-                </parameters>
-                <seeAlso>
-                    <item>
-                        <ref id="#setImage:forElement:">- setImage:forElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setData:forElement:">- setData:forElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#imageForElement:">- imageForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#dataForElement:">- dataForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- setBitmapImageRep:forElement:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>setData:forElement:</name>
-                <type>void</type>
-                <prototype>- (void)setData:(NSData *)<parameter>data</parameter>
-                     forElement:(kICOFamilyElement)<parameter>element</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>Sets the data for the specified <code>kICOFamilyElement</code>
-                        </para>
-                        <para></para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>data</name>
-                        <description>
-                            <para>The data to set for the specified element. </para>
-                        </description>
-                    </param>
-                    <param>
-                        <name>element</name>
-                        <description>
-                            <para>The element to set the image as.</para>
-                        </description>
-                    </param>
-                </parameters>
-                <seeAlso>
-                    <item>
-                        <ref id="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setImage:forElement:">- setImage:forElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#imageForElement:">- imageForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#dataForElement:">- dataForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- setData:forElement:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>setImage:forCustomSize:</name>
-                <type>void</type>
-                <prototype>- (void)setImage:(NSImage *)<parameter>image</parameter>
-                     forCustomSize:(NSSize)<parameter>size</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing. </para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>image</name>
-                        <description>
-                            <para>Image to set to the specified size </para>
-                        </description>
-                    </param>
-                    <param>
-                        <name>size</name>
-                        <description>
-                            <para>Size to set the image to</para>
-                        </description>
-                    </param>
-                </parameters>
-                <seeAlso>
-                    <item>
-                        <ref id="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setData:forCustomSize:">- setData:forCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- setImage:forCustomSize:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>setBitmapImageRep:forCustomSize:</name>
-                <type>void</type>
-                <prototype>- (void)setBitmapImageRep:(NSBitmapImageRep *)<parameter>rep</parameter>
-                     forCustomSize:(NSSize)<parameter>size</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>The size must not be NSZeroSize and the image's pixel size and the specified size must match or this will do nothing. </para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>rep</name>
-                        <description>
-                            <para>
-                                <code>NSBitmapImageRep</code>
-                                 to set to the specified size </para>
-                        </description>
-                    </param>
-                    <param>
-                        <name>size</name>
-                        <description>
-                            <para>Size to set the image repersentation to</para>
-                        </description>
-                    </param>
-                </parameters>
-                <seeAlso>
-                    <item>
-                        <ref id="#setImage:forCustomSize:">- setImage:forCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setData:forCustomSize:">- setData:forCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- setBitmapImageRep:forCustomSize:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>setData:forCustomSize:</name>
-                <type>void</type>
-                <prototype>- (void)setData:(NSData *)<parameter>data</parameter>
-                     forCustomSize:(NSSize)<parameter>size</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing. </para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>data</name>
-                        <description>
-                            <para>Data to set to the specified size </para>
-                        </description>
-                    </param>
-                    <param>
-                        <name>size</name>
-                        <description>
-                            <para>Size to set the image to</para>
-                        </description>
-                    </param>
-                </parameters>
-                <seeAlso>
-                    <item>
-                        <ref id="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setImage:forCustomSize:">- setImage:forCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- setData:forCustomSize:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>setElements:fromImage:</name>
-                <type>void</type>
-                <prototype>- (void)setElements:(kICOFamilyElement)<parameter>element</parameter>
-                     fromImage:(NSImage *)<parameter>image</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>
-                            <list>
-                                <item>
-                                    <para>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing.</para>
-                                </item>
-                            </list>
-                        </para>
-                        <para>
-                            <list>
-                                <item>
-                                    <para>The blitwise OR operator can be used to specify multiple sizes. Additionally you can use the <code>kICOFamilyAllElements</code>
-                                    </para>
-                                </item>
-                            </list>
-                        </para>
-                        <para></para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>element</name>
-                        <description>
-                            <para>THe Element(s) to resize and set the image to. </para>
-                        </description>
-                    </param>
-                    <param>
-                        <name>image</name>
-                        <description>
-                            <para>The image to set to Element</para>
-                        </description>
-                    </param>
-                </parameters>
-                <seeAlso>
-                    <item>
-                        <ref id="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setData:forCustomSize:">- setData:forCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- setElements:fromImage:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>dataForElement:</name>
-                <type>NSData *</type>
-                <prototype>- (NSData *)dataForElement:(kICOFamilyElement)<parameter>element</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>Gets the PNG representation of the specified @ kICOFamilyElement. </para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>element</name>
-                        <description>
-                            <para>The element of which the returned data is for </para>
-                        </description>
-                    </param>
-                </parameters>
-                <return>
-                    <para>Returns the PNG data for the element </para>
-                </return>
-                <seeAlso>
-                    <item>
-                        <ref id="#imageForElement:">- imageForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setData:forElement:">- setData:forElement:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- dataForElement:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>imageForElement:</name>
-                <type>NSImage *</type>
-                <prototype>- (NSImage *)imageForElement:(kICOFamilyElement)<parameter>element</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>Gets the <code>NSImage</code>
-                             representation of the specified @ kICOFamilyElement. </para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>element</name>
-                        <description>
-                            <para>The element of which the returned image is for </para>
-                        </description>
-                    </param>
-                </parameters>
-                <return>
-                    <para>Returns the <code>NSImage</code>
-                         value for the specified element. </para>
-                </return>
-                <seeAlso>
-                    <item>
-                        <ref id="#dataForElement:">- dataForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setImage:forElement:">- setImage:forElement:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- imageForElement:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>bitmapImageRepForElement:</name>
-                <type>NSBitmapImageRep *</type>
-                <prototype>- (NSBitmapImageRep *)bitmapImageRepForElement:(kICOFamilyElement)<parameter>element</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>Gets the <code>NSBitmapImageRep</code>
-                             of the specified @ kICOFamilyElement. </para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>element</name>
-                        <description>
-                            <para>The element of which the returned <code>NSBitmapImageRep</code>
-                                 is for </para>
-                        </description>
-                    </param>
-                </parameters>
-                <return>
-                    <para>Returns the <code>NSBitmapImageRep</code>
-                         for the specified element </para>
-                </return>
-                <seeAlso>
-                    <item>
-                        <ref id="#imageForElement:">- imageForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#dataForElement:">- dataForElement:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- bitmapImageRepForElement:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>dataForCustomSize:</name>
-                <type>NSData *</type>
-                <prototype>- (NSData *)dataForCustomSize:(NSSize)<parameter>size</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>Gets an <code>NSData</code>
-                             instance for the specified size. If the specified size doesn't exist, returns nil. </para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>size</name>
-                        <description>
-                            <para>The size the get the data for. </para>
-                        </description>
-                    </param>
-                </parameters>
-                <return>
-                    <para>Returns the data for the specified size.</para>
-                </return>
-                <seeAlso>
-                    <item>
-                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setData:forCustomSize:">- setData:forCustomSize:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- dataForCustomSize:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>imageForCustomSize:</name>
-                <type>NSImage *</type>
-                <prototype>- (NSImage *)imageForCustomSize:(NSSize)<parameter>size</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>If the specified size doesn't exist, returns nil. </para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>size</name>
-                        <description>
-                            <para>The size the get the image for. </para>
-                        </description>
-                    </param>
-                </parameters>
-                <return>
-                    <para>Returns the image for the specified size.</para>
-                </return>
-                <seeAlso>
-                    <item>
-                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setImage:forCustomSize:">- setImage:forCustomSize:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- imageForCustomSize:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>bitmapImageRepForCustomSize:</name>
-                <type>NSBitmapImageRep *</type>
-                <prototype>- (NSBitmapImageRep *)bitmapImageRepForCustomSize:(NSSize)<parameter>size</parameter>
-                </prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>If the specified size doesn't exist, returns nil. </para>
-                    </details>
-                </description>
-                <parameters>
-                    <param>
-                        <name>size</name>
-                        <description>
-                            <para>The size the get the <code>NSBitmapImageRep</code>
-                                 for. </para>
-                        </description>
-                    </param>
-                </parameters>
-                <return>
-                    <para>Returns the <code>NSBitmapImageRep</code>
-                         for the specified size.</para>
-                </return>
-                <seeAlso>
-                    <item>
-                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
-                    </item>
-                    <item>
-                        <ref id="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</ref>
-                    </item>
-                </seeAlso>
-                <selector>- bitmapImageRepForCustomSize:</selector>
-            </member>
-            <member kind="instance-method">
-                <name>imageWithAllReps</name>
-                <type>NSImage *</type>
-                <prototype>- (NSImage *)imageWithAllReps</prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>Gets an image with all of the representations of the <code>
-                                <ref id="">ICOFamily</ref>
-                            </code>
-                             instance. If no elements have been set, returns a blank NSImage. </para>
-                    </details>
-                </description>
-                <return>
-                    <para>Returns an autoreleased <code>NSImage</code>
-                         instance with all of the representations retrieved from <code>elements</code>
-                    </para>
-                </return>
-                <seeAlso>
-                    <item>
-                        <ref id="#elements">elements</ref>
-                    </item>
-                </seeAlso>
-                <selector>- imageWithAllReps</selector>
-            </member>
-            <member kind="instance-method">
-                <name>data</name>
-                <type>NSData *</type>
-                <prototype>- (NSData *)data</prototype>
-                <file>ICOFamily.h</file>
-                <description>
-                    <brief></brief>
-                    <details>
-                        <para>Gets the raw <code>NSData</code>
-                             object for the ICO file If there are no representations set, this returns nil.</para>
-                        <para></para>
-                    </details>
-                </description>
-                <return>
-                    <para>Returns the raw data for the ICO file for use when saving. </para>
-                </return>
-                <selector>- data</selector>
-            </member>
-        </section>
-        <section>
-            <name>Other</name>
             <member kind="class-method">
                 <name>family</name>
                 <type>id</type>
@@ -890,6 +320,611 @@
                     </item>
                 </seeAlso>
                 <selector>+ familyWithData:</selector>
+            </member>
+        </section>
+        <section>
+            <name>Using the ICOFamily Elements</name>
+            <member kind="instance-method">
+                <name>setImage:forElement:</name>
+                <type>void</type>
+                <prototype>- (void)setImage:(NSImage *)<parameter>image</parameter>
+                     forElement:(kICOFamilyElement)<parameter>element</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>Sets the image for the specified <code>kICOFamilyElement</code>
+                        </para>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>image</name>
+                        <description>
+                            <para>The image to set for the specified element. </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>element</name>
+                        <description>
+                            <para>The element to set the image as.</para>
+                        </description>
+                    </param>
+                </parameters>
+                <return>
+                    <para>Returns an autoreleased <code>
+                            <ref id="">ICOFamily</ref>
+                        </code>
+                         instance. </para>
+                </return>
+                <seeAlso>
+                    <item>
+                        <ref id="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setData:forElement:">- setData:forElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#imageForElement:">- imageForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#dataForElement:">- dataForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- setImage:forElement:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>setBitmapImageRep:forElement:</name>
+                <type>void</type>
+                <prototype>- (void)setBitmapImageRep:(NSBitmapImageRep *)<parameter>rep</parameter>
+                     forElement:(kICOFamilyElement)<parameter>element</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>Sets the @ NSBitmapImageRep for the specified <code>kICOFamilyElement</code>
+                        </para>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>rep</name>
+                        <description>
+                            <para>The rep to set for the specified element. </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>element</name>
+                        <description>
+                            <para>The element to set the image as.</para>
+                        </description>
+                    </param>
+                </parameters>
+                <seeAlso>
+                    <item>
+                        <ref id="#setImage:forElement:">- setImage:forElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setData:forElement:">- setData:forElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#imageForElement:">- imageForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#dataForElement:">- dataForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- setBitmapImageRep:forElement:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>setData:forElement:</name>
+                <type>void</type>
+                <prototype>- (void)setData:(NSData *)<parameter>data</parameter>
+                     forElement:(kICOFamilyElement)<parameter>element</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>Sets the data for the specified <code>kICOFamilyElement</code>
+                        </para>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>data</name>
+                        <description>
+                            <para>The data to set for the specified element. </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>element</name>
+                        <description>
+                            <para>The element to set the image as.</para>
+                        </description>
+                    </param>
+                </parameters>
+                <seeAlso>
+                    <item>
+                        <ref id="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setImage:forElement:">- setImage:forElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#imageForElement:">- imageForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#dataForElement:">- dataForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- setData:forElement:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>setElements:fromImage:</name>
+                <type>void</type>
+                <prototype>- (void)setElements:(kICOFamilyElement)<parameter>element</parameter>
+                     fromImage:(NSImage *)<parameter>image</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>
+                            <list>
+                                <item>
+                                    <para>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing.</para>
+                                </item>
+                            </list>
+                        </para>
+                        <para>
+                            <list>
+                                <item>
+                                    <para>The blitwise OR operator can be used to specify multiple sizes. Additionally you can use the <code>kICOFamilyAllElements</code>
+                                    </para>
+                                </item>
+                            </list>
+                        </para>
+                        <para></para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>element</name>
+                        <description>
+                            <para>THe Element(s) to resize and set the image to. </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>image</name>
+                        <description>
+                            <para>The image to set to Element</para>
+                        </description>
+                    </param>
+                </parameters>
+                <seeAlso>
+                    <item>
+                        <ref id="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setData:forCustomSize:">- setData:forCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- setElements:fromImage:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>dataForElement:</name>
+                <type>NSData *</type>
+                <prototype>- (NSData *)dataForElement:(kICOFamilyElement)<parameter>element</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>Gets the PNG representation of the specified <code>kICOFamilyElement</code>
+                            . </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>element</name>
+                        <description>
+                            <para>The element of which the returned data is for </para>
+                        </description>
+                    </param>
+                </parameters>
+                <return>
+                    <para>Returns the PNG data for the element </para>
+                </return>
+                <seeAlso>
+                    <item>
+                        <ref id="#imageForElement:">- imageForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setData:forElement:">- setData:forElement:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- dataForElement:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>imageForElement:</name>
+                <type>NSImage *</type>
+                <prototype>- (NSImage *)imageForElement:(kICOFamilyElement)<parameter>element</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>Gets the <code>NSImage</code>
+                             representation of the specified <code>kICOFamilyElement</code>
+                            . </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>element</name>
+                        <description>
+                            <para>The element of which the returned image is for </para>
+                        </description>
+                    </param>
+                </parameters>
+                <return>
+                    <para>Returns the <code>NSImage</code>
+                         value for the specified element. </para>
+                </return>
+                <seeAlso>
+                    <item>
+                        <ref id="#dataForElement:">- dataForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForElement:">- bitmapImageRepForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setImage:forElement:">- setImage:forElement:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- imageForElement:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>bitmapImageRepForElement:</name>
+                <type>NSBitmapImageRep *</type>
+                <prototype>- (NSBitmapImageRep *)bitmapImageRepForElement:(kICOFamilyElement)<parameter>element</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>Gets the <code>NSBitmapImageRep</code>
+                             of the specified <code>kICOFamilyElement</code>
+                            . </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>element</name>
+                        <description>
+                            <para>The element of which the returned <code>NSBitmapImageRep</code>
+                                 is for </para>
+                        </description>
+                    </param>
+                </parameters>
+                <return>
+                    <para>Returns the <code>NSBitmapImageRep</code>
+                         for the specified element </para>
+                </return>
+                <seeAlso>
+                    <item>
+                        <ref id="#imageForElement:">- imageForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#dataForElement:">- dataForElement:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setBitmapImageRep:forElement:">- setBitmapImageRep:forElement:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- bitmapImageRepForElement:</selector>
+            </member>
+        </section>
+        <section>
+            <name>Using Custom Image Sizes</name>
+            <member kind="instance-method">
+                <name>setImage:forCustomSize:</name>
+                <type>void</type>
+                <prototype>- (void)setImage:(NSImage *)<parameter>image</parameter>
+                     forCustomSize:(NSSize)<parameter>size</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing. </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>image</name>
+                        <description>
+                            <para>Image to set to the specified size </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>size</name>
+                        <description>
+                            <para>Size to set the image to</para>
+                        </description>
+                    </param>
+                </parameters>
+                <seeAlso>
+                    <item>
+                        <ref id="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setData:forCustomSize:">- setData:forCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- setImage:forCustomSize:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>setBitmapImageRep:forCustomSize:</name>
+                <type>void</type>
+                <prototype>- (void)setBitmapImageRep:(NSBitmapImageRep *)<parameter>rep</parameter>
+                     forCustomSize:(NSSize)<parameter>size</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>The size must not be NSZeroSize and the image's pixel size and the specified size must match or this will do nothing. </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>rep</name>
+                        <description>
+                            <para>
+                                <code>NSBitmapImageRep</code>
+                                 to set to the specified size </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>size</name>
+                        <description>
+                            <para>Size to set the image repersentation to</para>
+                        </description>
+                    </param>
+                </parameters>
+                <seeAlso>
+                    <item>
+                        <ref id="#setImage:forCustomSize:">- setImage:forCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setData:forCustomSize:">- setData:forCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- setBitmapImageRep:forCustomSize:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>setData:forCustomSize:</name>
+                <type>void</type>
+                <prototype>- (void)setData:(NSData *)<parameter>data</parameter>
+                     forCustomSize:(NSSize)<parameter>size</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>The size must not be NSZeroSize and the image's size and the specified size must match or this will do nothing. </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>data</name>
+                        <description>
+                            <para>Data to set to the specified size </para>
+                        </description>
+                    </param>
+                    <param>
+                        <name>size</name>
+                        <description>
+                            <para>Size to set the image to</para>
+                        </description>
+                    </param>
+                </parameters>
+                <seeAlso>
+                    <item>
+                        <ref id="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setImage:forCustomSize:">- setImage:forCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- setData:forCustomSize:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>dataForCustomSize:</name>
+                <type>NSData *</type>
+                <prototype>- (NSData *)dataForCustomSize:(NSSize)<parameter>size</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>Gets an <code>NSData</code>
+                             instance for the specified size. If the specified size doesn't exist, returns nil. </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>size</name>
+                        <description>
+                            <para>The size the get the data for. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <return>
+                    <para>Returns the data for the specified size.</para>
+                </return>
+                <seeAlso>
+                    <item>
+                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setData:forCustomSize:">- setData:forCustomSize:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- dataForCustomSize:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>imageForCustomSize:</name>
+                <type>NSImage *</type>
+                <prototype>- (NSImage *)imageForCustomSize:(NSSize)<parameter>size</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>If the specified size doesn't exist, returns nil. </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>size</name>
+                        <description>
+                            <para>The size the get the image for. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <return>
+                    <para>Returns the image for the specified size.</para>
+                </return>
+                <seeAlso>
+                    <item>
+                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#bitmapImageRepForCustomSize:">- bitmapImageRepForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setImage:forCustomSize:">- setImage:forCustomSize:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- imageForCustomSize:</selector>
+            </member>
+            <member kind="instance-method">
+                <name>bitmapImageRepForCustomSize:</name>
+                <type>NSBitmapImageRep *</type>
+                <prototype>- (NSBitmapImageRep *)bitmapImageRepForCustomSize:(NSSize)<parameter>size</parameter>
+                </prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>If the specified size doesn't exist, returns nil. </para>
+                    </details>
+                </description>
+                <parameters>
+                    <param>
+                        <name>size</name>
+                        <description>
+                            <para>The size the get the <code>NSBitmapImageRep</code>
+                                 for. </para>
+                        </description>
+                    </param>
+                </parameters>
+                <return>
+                    <para>Returns the <code>NSBitmapImageRep</code>
+                         for the specified size.</para>
+                </return>
+                <seeAlso>
+                    <item>
+                        <ref id="#imageForCustomSize:">- imageForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#dataForCustomSize:">- dataForCustomSize:</ref>
+                    </item>
+                    <item>
+                        <ref id="#setBitmapImageRep:forCustomSize:">- setBitmapImageRep:forCustomSize:</ref>
+                    </item>
+                </seeAlso>
+                <selector>- bitmapImageRepForCustomSize:</selector>
+            </member>
+        </section>
+        <section>
+            <name>Writing the ICO.</name>
+            <member kind="instance-method">
+                <name>data</name>
+                <type>NSData *</type>
+                <prototype>- (NSData *)data</prototype>
+                <file>ICOFamily.h</file>
+                <description>
+                    <brief></brief>
+                    <details>
+                        <para>Gets the raw <code>NSData</code>
+                             object for the ICO file If there are no representations set, this returns nil.</para>
+                        <para></para>
+                    </details>
+                </description>
+                <return>
+                    <para>Returns the raw data for the ICO file for use when saving. </para>
+                </return>
+                <selector>- data</selector>
             </member>
         </section>
     </sections>

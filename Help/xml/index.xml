@@ -2,45 +2,47 @@
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.7.1">
   <compound refid="interface_i_c_o_family" kind="class"><name>ICOFamily</name>
     <member refid="interface_i_c_o_family_1acb548d4be904c0d8e8ba4f3214f1ab4d" kind="property"><name>elements</name></member>
+    <member refid="interface_i_c_o_family_1a1c78620ef7a5a06eabb1ae2670a937fb" kind="function"><name>imageWithAllReps</name></member>
     <member refid="interface_i_c_o_family_1a662d7a27462fc81ab7037c7972fee1f1" kind="function"><name>initWithImage:</name></member>
     <member refid="interface_i_c_o_family_1ac2a7cdb55b7d43f64a4fc4bc12309bbb" kind="function"><name>initWithBitmapImageRep:</name></member>
     <member refid="interface_i_c_o_family_1a6fee439f6a8977f4e112e10d166f90ed" kind="function"><name>initWithData:</name></member>
-    <member refid="interface_i_c_o_family_1a035e531a4d130b7fa3e8615cffcc7d6f" kind="function"><name>setImage:forElement:</name></member>
-    <member refid="interface_i_c_o_family_1ab8a1b7fd195667444b246415ebf4038b" kind="function"><name>setBitmapImageRep:forElement:</name></member>
-    <member refid="interface_i_c_o_family_1ae6269e8333319361ae73bb76bb637f87" kind="function"><name>setData:forElement:</name></member>
-    <member refid="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" kind="function"><name>setImage:forCustomSize:</name></member>
-    <member refid="interface_i_c_o_family_1a2211781f0e33c59244138761f3a79a9a" kind="function"><name>setBitmapImageRep:forCustomSize:</name></member>
-    <member refid="interface_i_c_o_family_1a9f214507e9888bb583d6442593f2f95f" kind="function"><name>setData:forCustomSize:</name></member>
-    <member refid="interface_i_c_o_family_1a1cc28b100052d7ac4649d5fb3114634c" kind="function"><name>setElements:fromImage:</name></member>
-    <member refid="interface_i_c_o_family_1a3e005c57b719cb31f37c90815547d900" kind="function"><name>dataForElement:</name></member>
-    <member refid="interface_i_c_o_family_1a0e0f7d3ce2308da2c5f17868f8008fde" kind="function"><name>imageForElement:</name></member>
-    <member refid="interface_i_c_o_family_1a1d862aa3444245957d7548d84af67b03" kind="function"><name>bitmapImageRepForElement:</name></member>
-    <member refid="interface_i_c_o_family_1aa71a4f4eddb10efe738b089b5fa262b1" kind="function"><name>dataForCustomSize:</name></member>
-    <member refid="interface_i_c_o_family_1ac030eb99213f78e0879ade150ffbe89e" kind="function"><name>imageForCustomSize:</name></member>
-    <member refid="interface_i_c_o_family_1a905a12fd63201d1dadd2b647b4843b6c" kind="function"><name>bitmapImageRepForCustomSize:</name></member>
-    <member refid="interface_i_c_o_family_1a1c78620ef7a5a06eabb1ae2670a937fb" kind="function"><name>imageWithAllReps</name></member>
-    <member refid="interface_i_c_o_family_1aa5ac9b74b0700e69c5dae54dd7e4cd4c" kind="function"><name>verifyImageOfSize:forElement:</name></member>
-    <member refid="interface_i_c_o_family_1aa6a569fce89d41adc4d72380c751d0ae" kind="function"><name>data</name></member>
     <member refid="interface_i_c_o_family_1ae4b4c6259b060b9d46e9e90f9106c224" kind="function"><name>family</name></member>
     <member refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kind="function"><name>familyWithImage:</name></member>
     <member refid="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" kind="function"><name>familyWithBitmapImageRep:</name></member>
     <member refid="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" kind="function"><name>familyWithData:</name></member>
+    <member refid="interface_i_c_o_family_1a035e531a4d130b7fa3e8615cffcc7d6f" kind="function"><name>setImage:forElement:</name></member>
+    <member refid="interface_i_c_o_family_1ab8a1b7fd195667444b246415ebf4038b" kind="function"><name>setBitmapImageRep:forElement:</name></member>
+    <member refid="interface_i_c_o_family_1ae6269e8333319361ae73bb76bb637f87" kind="function"><name>setData:forElement:</name></member>
+    <member refid="interface_i_c_o_family_1a1cc28b100052d7ac4649d5fb3114634c" kind="function"><name>setElements:fromImage:</name></member>
+    <member refid="interface_i_c_o_family_1a3e005c57b719cb31f37c90815547d900" kind="function"><name>dataForElement:</name></member>
+    <member refid="interface_i_c_o_family_1a0e0f7d3ce2308da2c5f17868f8008fde" kind="function"><name>imageForElement:</name></member>
+    <member refid="interface_i_c_o_family_1a1d862aa3444245957d7548d84af67b03" kind="function"><name>bitmapImageRepForElement:</name></member>
+    <member refid="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" kind="function"><name>setImage:forCustomSize:</name></member>
+    <member refid="interface_i_c_o_family_1a2211781f0e33c59244138761f3a79a9a" kind="function"><name>setBitmapImageRep:forCustomSize:</name></member>
+    <member refid="interface_i_c_o_family_1a9f214507e9888bb583d6442593f2f95f" kind="function"><name>setData:forCustomSize:</name></member>
+    <member refid="interface_i_c_o_family_1aa71a4f4eddb10efe738b089b5fa262b1" kind="function"><name>dataForCustomSize:</name></member>
+    <member refid="interface_i_c_o_family_1ac030eb99213f78e0879ade150ffbe89e" kind="function"><name>imageForCustomSize:</name></member>
+    <member refid="interface_i_c_o_family_1a905a12fd63201d1dadd2b647b4843b6c" kind="function"><name>bitmapImageRepForCustomSize:</name></member>
+    <member refid="interface_i_c_o_family_1aa6a569fce89d41adc4d72380c751d0ae" kind="function"><name>data</name></member>
+    <member refid="interface_i_c_o_family_1aa38775f8066060c52d745d9357820cfb" kind="function"><name>verifyImageOfSize:forElement:</name></member>
+  </compound>
+  <compound refid="interface_i_c_o_family_07_private_08" kind="class"><name>ICOFamily(Private)</name>
+    <member refid="interface_i_c_o_family_1aa38775f8066060c52d745d9357820cfb" kind="function"><name>verifyImageOfSize:forElement:</name></member>
   </compound>
   <compound refid="interface_i_c_o_family_app_delegate" kind="class"><name>ICOFamilyAppDelegate</name>
     <member refid="interface_i_c_o_family_app_delegate_1a6972eb01eadcdb1e4b6f589ad405e267" kind="variable"><name>window</name></member>
     <member refid="interface_i_c_o_family_app_delegate_1a5ca43b70a36b086f66e6f47695c2ad5a" kind="property"><name>window</name></member>
   </compound>
   <compound refid="_i_c_o_family_8h" kind="file"><name>ICOFamily.h</name>
-    <member refid="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55b" kind="enum"><name>@0</name></member>
-    <member refid="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bae983868c3b2d29e9bbf11354b781f7a4" kind="enumvalue"><name>kICOFamilyAllElements</name></member>
-    <member refid="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bafd0825725a044d2a1c7e3015a9250399" kind="enumvalue"><name>kICOFamily256Element</name></member>
-    <member refid="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bae9e87616078c108291c0b1131ae727d6" kind="enumvalue"><name>kICOFamily128Element</name></member>
-    <member refid="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55ba8cbaead140bdd144c3893b7b852fa316" kind="enumvalue"><name>kICOFamily64Element</name></member>
-    <member refid="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55ba7ab12e965e8efdc1758300d58499d447" kind="enumvalue"><name>kICOFamily48Element</name></member>
-    <member refid="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55ba12ef41e5853e5d0c0643e94640216fe7" kind="enumvalue"><name>kICOFamily32Element</name></member>
-    <member refid="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bab77bcd29b6d22e73f075d445941e0ef9" kind="enumvalue"><name>kICOFamily24Element</name></member>
-    <member refid="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bad7985f5d3f9d9fa2bff0e13d52a38372" kind="enumvalue"><name>kICOFamily16Element</name></member>
-    <member refid="_i_c_o_family_8h_1acbe4a3d969414158dd897f64c50be38c" kind="typedef"><name>kICOFamilyElement</name></member>
+    <member refid="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2" kind="enum"><name>kICOFamilyElement</name></member>
+    <member refid="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2ae983868c3b2d29e9bbf11354b781f7a4" kind="enumvalue"><name>kICOFamilyAllElements</name></member>
+    <member refid="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2afd0825725a044d2a1c7e3015a9250399" kind="enumvalue"><name>kICOFamily256Element</name></member>
+    <member refid="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2ae9e87616078c108291c0b1131ae727d6" kind="enumvalue"><name>kICOFamily128Element</name></member>
+    <member refid="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2a8cbaead140bdd144c3893b7b852fa316" kind="enumvalue"><name>kICOFamily64Element</name></member>
+    <member refid="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2a7ab12e965e8efdc1758300d58499d447" kind="enumvalue"><name>kICOFamily48Element</name></member>
+    <member refid="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2a12ef41e5853e5d0c0643e94640216fe7" kind="enumvalue"><name>kICOFamily32Element</name></member>
+    <member refid="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2ab77bcd29b6d22e73f075d445941e0ef9" kind="enumvalue"><name>kICOFamily24Element</name></member>
+    <member refid="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2ad7985f5d3f9d9fa2bff0e13d52a38372" kind="enumvalue"><name>kICOFamily16Element</name></member>
   </compound>
   <compound refid="_i_c_o_family_8m" kind="file"><name>ICOFamily.m</name>
   </compound>
@@ -50,5 +52,13 @@
   </compound>
   <compound refid="main_8m" kind="file"><name>main.m</name>
     <member refid="main_8m_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_a63130a83fa2aa92236632b1228ae316" kind="dir"><name>Documents/</name>
+  </compound>
+  <compound refid="dir_d48e4e9ac4854d4aa266e375cc7d9b22" kind="dir"><name>Documents/Source Code/Git/</name>
+  </compound>
+  <compound refid="dir_2935a8faaa8334342947be629be6eb3a" kind="dir"><name>Documents/Source Code/Git/ICOFamily/</name>
+  </compound>
+  <compound refid="dir_ba8cff67d7f61f030a531a041c330458" kind="dir"><name>Documents/Source Code/</name>
   </compound>
 </doxygenindex>

@@ -3,14 +3,14 @@
   <compounddef id="_i_c_o_family_8h" kind="file">
     <compoundname>ICOFamily.h</compoundname>
     <includes local="no">Cocoa/Cocoa.h</includes>
-    <includedby refid="_i_c_o_family_8m" local="yes">ICOFamily.m</includedby>
-    <includedby refid="_i_c_o_family_app_delegate_8m" local="yes">ICOFamilyAppDelegate.m</includedby>
+    <includedby refid="_i_c_o_family_8m" local="yes">Documents/Source Code/Git/ICOFamily/ICOFamily.m</includedby>
+    <includedby refid="_i_c_o_family_app_delegate_8m" local="yes">Documents/Source Code/Git/ICOFamily/ICOFamilyAppDelegate.m</includedby>
     <incdepgraph>
       <node id="1">
         <label>Cocoa/Cocoa.h</label>
       </node>
       <node id="0">
-        <label>ICOFamily.h</label>
+        <label>Documents/Source Code/Git/ICOFamily/ICOFamily.h</label>
         <link refid="ICOFamily.h"/>
         <childnode refid="1" relation="include">
         </childnode>
@@ -18,9 +18,9 @@
     </incdepgraph>
     <innerclass refid="interface_i_c_o_family" prot="public">ICOFamily</innerclass>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55b" prot="public" static="no">
-        <name>@0</name>
-        <enumvalue id="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bae983868c3b2d29e9bbf11354b781f7a4" prot="public">
+      <memberdef kind="enum" id="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2" prot="public" static="no">
+        <name>kICOFamilyElement</name>
+        <enumvalue id="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2ae983868c3b2d29e9bbf11354b781f7a4" prot="public">
           <name>kICOFamilyAllElements</name>
           <initializer> -1</initializer>
           <briefdescription>
@@ -28,7 +28,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bafd0825725a044d2a1c7e3015a9250399" prot="public">
+        <enumvalue id="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2afd0825725a044d2a1c7e3015a9250399" prot="public">
           <name>kICOFamily256Element</name>
           <initializer> 0</initializer>
           <briefdescription>
@@ -36,7 +36,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bae9e87616078c108291c0b1131ae727d6" prot="public">
+        <enumvalue id="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2ae9e87616078c108291c0b1131ae727d6" prot="public">
           <name>kICOFamily128Element</name>
           <initializer> 1</initializer>
           <briefdescription>
@@ -44,7 +44,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55ba8cbaead140bdd144c3893b7b852fa316" prot="public">
+        <enumvalue id="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2a8cbaead140bdd144c3893b7b852fa316" prot="public">
           <name>kICOFamily64Element</name>
           <initializer> 2</initializer>
           <briefdescription>
@@ -52,7 +52,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55ba7ab12e965e8efdc1758300d58499d447" prot="public">
+        <enumvalue id="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2a7ab12e965e8efdc1758300d58499d447" prot="public">
           <name>kICOFamily48Element</name>
           <initializer> 4</initializer>
           <briefdescription>
@@ -60,7 +60,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55ba12ef41e5853e5d0c0643e94640216fe7" prot="public">
+        <enumvalue id="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2a12ef41e5853e5d0c0643e94640216fe7" prot="public">
           <name>kICOFamily32Element</name>
           <initializer> 8</initializer>
           <briefdescription>
@@ -68,7 +68,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bab77bcd29b6d22e73f075d445941e0ef9" prot="public">
+        <enumvalue id="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2ab77bcd29b6d22e73f075d445941e0ef9" prot="public">
           <name>kICOFamily24Element</name>
           <initializer> 16</initializer>
           <briefdescription>
@@ -76,7 +76,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="_i_c_o_family_8h_1a06fc87d81c62e9abb8790b6e5713c55bad7985f5d3f9d9fa2bff0e13d52a38372" prot="public">
+        <enumvalue id="_i_c_o_family_8h_1ae79f055393fecb021c05e3531aca42a2ad7985f5d3f9d9fa2bff0e13d52a38372" prot="public">
           <name>kICOFamily16Element</name>
           <initializer> 32</initializer>
           <briefdescription>
@@ -90,22 +90,7 @@
 <para>Some predefined sizes commonly used in ICO files </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="11" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" bodystart="11" bodyend="20"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="_i_c_o_family_8h_1acbe4a3d969414158dd897f64c50be38c" prot="public" static="no">
-        <type>NSUInteger</type>
-        <definition>typedef NSUInteger kICOFamilyElement</definition>
-        <argsstring></argsstring>
-        <name>kICOFamilyElement</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="22" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" bodystart="22" bodyend="-1"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="13" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" bodystart="13" bodyend="22"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -122,60 +107,81 @@
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#import<sp/>&lt;Cocoa/Cocoa.h&gt;</highlight></codeline>
-<codeline lineno="11"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamilyAllElements<sp/><sp/><sp/>=<sp/>-1,</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily256Element<sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily128Element<sp/><sp/><sp/><sp/>=<sp/>1,</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily64Element<sp/><sp/><sp/><sp/><sp/>=<sp/>2,</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily48Element<sp/><sp/><sp/><sp/><sp/>=<sp/>4,</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily32Element<sp/><sp/><sp/><sp/><sp/>=<sp/>8,</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily24Element<sp/><sp/><sp/><sp/><sp/>=<sp/>16,</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily16Element<sp/><sp/><sp/><sp/><sp/>=<sp/>32</highlight></codeline>
-<codeline lineno="20"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>NSUInteger<sp/>kICOFamilyElement;</highlight></codeline>
+<codeline lineno="13"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>_kICOFamilyElement<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamilyAllElements<sp/><sp/><sp/>=<sp/>-1,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily256Element<sp/><sp/><sp/><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily128Element<sp/><sp/><sp/><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily64Element<sp/><sp/><sp/><sp/><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily48Element<sp/><sp/><sp/><sp/><sp/>=<sp/>4,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily32Element<sp/><sp/><sp/><sp/><sp/>=<sp/>8,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily24Element<sp/><sp/><sp/><sp/><sp/>=<sp/>16,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>kICOFamily16Element<sp/><sp/><sp/><sp/><sp/>=<sp/>32</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}<sp/>kICOFamilyElement;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27" refid="interface_i_c_o_family" refkind="compound"><highlight class="keyword">@interface<sp/></highlight><highlight class="normal"><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref>:<sp/>NSObject<sp/>&lt;NSCopying&gt;<sp/>{</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>NSMutableDictionary<sp/>*elements;</highlight></codeline>
+<codeline lineno="28" refid="interface_i_c_o_family_1acb548d4be904c0d8e8ba4f3214f1ab4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>NSMutableDictionary<sp/>*elements;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">@property<sp/>(nonatomic,<sp/>retain)<sp/>NSMutableDictionary<sp/>*elements;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>@name<sp/>Creating<sp/>and<sp/>Initializing<sp/>ICOFamily&apos;s</highlight></codeline>
-<codeline lineno="37"><highlight class="comment"></highlight><highlight class="normal">-<sp/>initWithImage:(NSImage*)image;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal">-<sp/>initWithBitmapImageRep:(NSBitmapImageRep*)rep;</highlight></codeline>
-<codeline lineno="49"><highlight class="normal">-<sp/>initWithData:(NSData*)data;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal">+<sp/>family;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal">+<sp/>familyWithImage:(NSImage*)image;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal">+<sp/>familyWithBitmapImageRep:(NSBitmapImageRep*)rep;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal">+<sp/>familyWithData:(NSData*)data;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>@name<sp/>Setting<sp/>Image<sp/>Representations</highlight></codeline>
-<codeline lineno="98"><highlight class="comment"></highlight><highlight class="normal">-<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)setImage:(NSImage*)image<sp/>forElement:(kICOFamilyElement)element;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal">-<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)setBitmapImageRep:(NSBitmapImageRep*)rep<sp/>forElement:(kICOFamilyElement)element;</highlight></codeline>
-<codeline lineno="122"><highlight class="normal">-<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)setData:(NSData*)data<sp/>forElement:(kICOFamilyElement)element;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal">-<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)setImage:(NSImage*)image<sp/>forCustomSize:(NSSize)size;</highlight></codeline>
-<codeline lineno="145"><highlight class="normal">-<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)setBitmapImageRep:(NSBitmapImageRep*)rep<sp/>forCustomSize:(NSSize)size;</highlight></codeline>
-<codeline lineno="156"><highlight class="normal">-<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)setData:(NSData*)data<sp/>forCustomSize:(NSSize)size;</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"></highlight></codeline>
-<codeline lineno="172"><highlight class="normal">-<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)setElements:(kICOFamilyElement)element<sp/>fromImage:(NSImage*)image;</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>@name<sp/>Getting<sp/>Image<sp/>Representations</highlight></codeline>
-<codeline lineno="182"><highlight class="comment"></highlight><highlight class="normal">-<sp/>(NSData*)dataForElement:(kICOFamilyElement)element;</highlight></codeline>
-<codeline lineno="190"><highlight class="normal">-<sp/>(NSImage*)imageForElement:(kICOFamilyElement)element;</highlight></codeline>
-<codeline lineno="198"><highlight class="normal">-<sp/>(NSBitmapImageRep*)bitmapImageRepForElement:(kICOFamilyElement)element;</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal">-<sp/>(NSData*)dataForCustomSize:(NSSize)size;</highlight></codeline>
-<codeline lineno="218"><highlight class="normal">-<sp/>(NSImage*)imageForCustomSize:(NSSize)size;</highlight></codeline>
-<codeline lineno="228"><highlight class="normal">-<sp/>(NSBitmapImageRep*)bitmapImageRepForCustomSize:(NSSize)size;</highlight></codeline>
-<codeline lineno="234"><highlight class="normal">-<sp/>(NSImage*)imageWithAllReps;</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"></highlight></codeline>
-<codeline lineno="236"><highlight class="normal">-<sp/>(BOOL)verifyImageOfSize:(NSSize)size<sp/>forElement:(kICOFamilyElement)element;</highlight></codeline>
-<codeline lineno="242"><highlight class="normal">-<sp/>(NSData*)data;</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"></highlight></codeline>
-<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>(void)readFromData:(NSData*)data;<sp/>//<sp/>Not<sp/>yet.<sp/>But<sp/>if<sp/>done<sp/>correctly,<sp/>would<sp/>read<sp/>from<sp/>an<sp/>ICO<sp/>file&apos;s<sp/>raw<sp/>data<sp/>and<sp/>set<sp/>the<sp/>elements<sp/>accordingly.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="245"><highlight class="normal"></highlight></codeline>
-<codeline lineno="246"><highlight class="normal">@end</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>-</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>Creating<sp/>and<sp/>Initializing<sp/>ICOFamilies</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="33"></codeline>
+<codeline lineno="34"></codeline>
+<codeline lineno="35"></codeline>
+<codeline lineno="40"><highlight class="normal">-<sp/>initWithImage:(NSImage*)image;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">-<sp/>initWithBitmapImageRep:(NSBitmapImageRep*)rep;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">-<sp/>initWithData:(NSData*)data;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">+<sp/>family;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">+<sp/>familyWithImage:(NSImage*)image;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">+<sp/>familyWithBitmapImageRep:(NSBitmapImageRep*)rep;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">+<sp/>familyWithData:(NSData*)data;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>-</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>Using<sp/>the<sp/>Family<sp/>Elements</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="90"></codeline>
+<codeline lineno="91"></codeline>
+<codeline lineno="92"></codeline>
+<codeline lineno="104"><highlight class="normal">-<sp/>(void)setImage:(NSImage*)image<sp/>forElement:(kICOFamilyElement)element;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">-<sp/>(void)setBitmapImageRep:(NSBitmapImageRep*)rep<sp/>forElement:(kICOFamilyElement)element;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">-<sp/>(void)setData:(NSData*)data<sp/>forElement:(kICOFamilyElement)element;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">-<sp/>(void)setElements:(kICOFamilyElement)element<sp/>fromImage:(NSImage*)image;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal">-<sp/>(NSData*)dataForElement:(kICOFamilyElement)element;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">-<sp/>(NSImage*)imageForElement:(kICOFamilyElement)element;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">-<sp/>(NSBitmapImageRep*)bitmapImageRepForElement:(kICOFamilyElement)element;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>-</highlight></codeline>
+<codeline lineno="173"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>Using<sp/>Custom<sp/>Sizes</highlight></codeline>
+<codeline lineno="174"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="175"></codeline>
+<codeline lineno="176"></codeline>
+<codeline lineno="177"></codeline>
+<codeline lineno="187"><highlight class="normal">-<sp/>(void)setImage:(NSImage*)image<sp/>forCustomSize:(NSSize)size;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">-<sp/>(void)setBitmapImageRep:(NSBitmapImageRep*)rep<sp/>forCustomSize:(NSSize)size;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">-<sp/>(void)setData:(NSData*)data<sp/>forCustomSize:(NSSize)size;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal">-<sp/>(NSData*)dataForCustomSize:(NSSize)size;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">-<sp/>(NSImage*)imageForCustomSize:(NSSize)size;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">-<sp/>(NSBitmapImageRep*)bitmapImageRepForCustomSize:(NSSize)size;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"></codeline>
+<codeline lineno="251"><highlight class="normal">-<sp/>(NSData*)data;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>(void)readFromData:(NSData*)data;<sp/>//<sp/>Not<sp/>yet.<sp/>But<sp/>if<sp/>done<sp/>correctly,<sp/>would<sp/>read<sp/>from<sp/>an<sp/>ICO<sp/>file&apos;s<sp/>raw<sp/>data<sp/>and<sp/>set<sp/>the<sp/>elements<sp/>accordingly.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>-</highlight></codeline>
+<codeline lineno="256"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#pragma<sp/>mark<sp/>Getting<sp/>Special<sp/>Representations</highlight></codeline>
+<codeline lineno="257"><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="258"></codeline>
+<codeline lineno="259"></codeline>
+<codeline lineno="260"></codeline>
+<codeline lineno="265"><highlight class="normal">-<sp/>(NSImage*)imageWithAllReps;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal">@property<sp/>(nonatomic,<sp/>retain)<sp/>NSMutableDictionary<sp/>*elements;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal">@end</highlight></codeline>
     </programlisting>
     <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h"/>
   </compounddef>

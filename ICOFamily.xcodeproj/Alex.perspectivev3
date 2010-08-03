@@ -318,7 +318,7 @@
 							<real>185</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>188 197 1169 643 0 0 1440 878 </string>
+						<string>55 235 1169 643 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -348,7 +348,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FAB253EC1207D86D00003D13</string>
+										<string>FAB2541A1208753F00003D13</string>
 										<key>history</key>
 										<array>
 											<string>FAB24F3C1207619A00003D13</string>
@@ -357,8 +357,8 @@
 											<string>FAB253941207B6F300003D13</string>
 											<string>FAB253B71207B88F00003D13</string>
 											<string>FAB253D41207BBAC00003D13</string>
-											<string>FAB253D81207C9F000003D13</string>
-											<string>FAB253E21207CFB900003D13</string>
+											<string>FAB2540B120873B800003D13</string>
+											<string>FAB2540C120873B800003D13</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -372,18 +372,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {962, 394}}</string>
+								<string>{{0, 0}, {962, 393}}</string>
 								<key>RubberWindowFrame</key>
-								<string>188 197 1169 643 0 0 1440 878 </string>
+								<string>55 235 1169 643 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>394pt</string>
+							<string>393pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>203pt</string>
+							<string>204pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -451,9 +451,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {962, 176}}</string>
+										<string>{{10, 27}, {962, 177}}</string>
 										<key>RubberWindowFrame</key>
-										<string>188 197 1169 643 0 0 1440 878 </string>
+										<string>55 235 1169 643 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -657,7 +657,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>302504045.63257003</real>
+	<real>302544191.49372798</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -674,13 +674,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FAB253D21207B9FB00003D13</string>
 		<string>FAB24F671207667E00003D13</string>
 		<string>FAB24F681207667E00003D13</string>
 		<string>/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>188 197 1169 643 0 0 1440 878 </string>
+	<string>55 235 1169 643 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

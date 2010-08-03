@@ -3,7 +3,9 @@
   <compounddef id="interface_i_c_o_family" kind="class" prot="public">
     <compoundname>ICOFamily</compoundname>
     <includes refid="_i_c_o_family_8h" local="no">ICOFamily.h</includes>
-      <sectiondef kind="property">
+      <sectiondef kind="user-defined">
+      <header>Getting Special Representations</header>
+      <description><para><anchor id="_1amgrpedf7136b3c036983c5fb4696f8494002"/> </para></description>
       <memberdef kind="property" id="interface_i_c_o_family_1acb548d4be904c0d8e8ba4f3214f1ab4d" prot="public" static="no" readable="yes" writable="yes" gettable="no" settable="no" accessor="retain">
         <type>NSMutableDictionary *</type>
         <definition>NSMutableDictionary * ICOFamily::elements</definition>
@@ -14,13 +16,32 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>All of the representations go in here, unless they are null.</para><para><simplesect kind="return"><para>A dictionary of all of the NSBitmapImageReps that will be used for the ICO file. Keys would either be an <computeroutput>NSNumber</computeroutput> representation of the element used or a size from NSStringFromSize() </para></simplesect>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a1c78620ef7a5a06eabb1ae2670a937fb" kindref="member">- imageWithAllReps</ref>; </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="28" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" bodystart="28" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="function" id="interface_i_c_o_family_1a1c78620ef7a5a06eabb1ae2670a937fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>NSImage *</type>
+        <definition>NSImage * ICOFamily::imageWithAllReps</definition>
+        <argsstring>()</argsstring>
+        <name>imageWithAllReps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets an image with all of the representations of the <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance. If no elements have been set, returns a blank NSImage. <simplesect kind="return"><para>Returns an autoreleased <computeroutput>NSImage</computeroutput> instance with all of the representations retrieved from <computeroutput>elements</computeroutput> </para></simplesect>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1acb548d4be904c0d8e8ba4f3214f1ab4d" kindref="member">elements</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="265" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="209" bodyend="219"/>
+      </memberdef>
       </sectiondef>
-      <sectiondef kind="public-func">
+      <sectiondef kind="user-defined">
+      <header>Creating and Initializing ICOFamilies</header>
+      <description><para><anchor id="_1amgrp71cdd6176d33d653214037b3f8c9ba87"/> </para></description>
       <memberdef kind="function" id="interface_i_c_o_family_1a662d7a27462fc81ab7037c7972fee1f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>id</type>
         <definition>id ICOFamily::initWithImage:</definition>
@@ -41,11 +62,11 @@
 <para>the image to set. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>setImage: </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kindref="member">+ familyWithImage:</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a035e531a4d130b7fa3e8615cffcc7d6f" kindref="member">- setImage:forElement:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kindref="member">+ familyWithImage:</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="37" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="24" bodyend="29"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="40" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="32" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1ac2a7cdb55b7d43f64a4fc4bc12309bbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>id</type>
@@ -67,11 +88,11 @@
 <para>the <computeroutput>NSBitmapImageRep</computeroutput> to set. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>setBitmapImageRep: </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" kindref="member">+ familyWithBitmapImageRep:</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1ab8a1b7fd195667444b246415ebf4038b" kindref="member">- setBitmapImageRep:forElement:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" kindref="member">+ familyWithBitmapImageRep:</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="43" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="30" bodyend="35"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="46" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="38" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1a6fee439f6a8977f4e112e10d166f90ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>id</type>
@@ -93,12 +114,111 @@
 <para>the data to set. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para>setData: </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" kindref="member">+ familyWithData:</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1ae6269e8333319361ae73bb76bb637f87" kindref="member">- setData:forElement:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" kindref="member">+ familyWithData:</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="49" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="36" bodyend="42"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="52" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="44" bodyend="50"/>
       </memberdef>
+      <memberdef kind="function" id="interface_i_c_o_family_1ae4b4c6259b060b9d46e9e90f9106c224" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
+        <type>id</type>
+        <definition>id ICOFamily::family</definition>
+        <argsstring>()</argsstring>
+        <name>family</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance and returns it autoreleased. <simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kindref="member">+ familyWithImage:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" kindref="member">+ familyWithBitmapImageRep:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" kindref="member">+ familyWithData:</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="59" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
+        <type>id</type>
+        <definition>id ICOFamily::familyWithImage:</definition>
+        <argsstring>(NSImage *image)</argsstring>
+        <name>familyWithImage:</name>
+        <param>
+          <type>NSImage *</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance and returns it autoreleased after setting the image.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image to initially set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1ae4b4c6259b060b9d46e9e90f9106c224" kindref="member">+ family</ref>: </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" kindref="member">+ familyWithBitmapImageRep:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" kindref="member">+ familyWithData:</ref> </para></simplesect>
+<simplesect kind="return"><para>Returns an autoreleased <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="68" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="56" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
+        <type>id</type>
+        <definition>id ICOFamily::familyWithBitmapImageRep:</definition>
+        <argsstring>(NSBitmapImageRep *rep)</argsstring>
+        <name>familyWithBitmapImageRep:</name>
+        <param>
+          <type>NSBitmapImageRep *</type>
+          <declname>rep</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance and returns it autoreleased after setting the <computeroutput>NSBitmapImageRep</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <computeroutput>NSBitmapImageRep</computeroutput> to initially set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1ae4b4c6259b060b9d46e9e90f9106c224" kindref="member">+ family</ref>: </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kindref="member">+ familyWithImage:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" kindref="member">+ familyWithData:</ref> </para></simplesect>
+<simplesect kind="return"><para>Returns an autoreleased <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="77" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="61" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
+        <type>id</type>
+        <definition>id ICOFamily::familyWithData:</definition>
+        <argsstring>(NSData *data)</argsstring>
+        <name>familyWithData:</name>
+        <param>
+          <type>NSData *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance and returns it autoreleased after setting the data.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to initially set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1ae4b4c6259b060b9d46e9e90f9106c224" kindref="member">+ family</ref>: </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" kindref="member">+ familyWithBitmapImageRep:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kindref="member">+ familyWithImage:</ref> </para></simplesect>
+<simplesect kind="return"><para>Returns an autoreleased <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="86" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="66" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Using the ICOFamily Elements</header>
+      <description><para><anchor id="_1amgrp7064be83164ee11042fd0489cb787978"/> </para></description>
       <memberdef kind="function" id="interface_i_c_o_family_1a035e531a4d130b7fa3e8615cffcc7d6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void ICOFamily::setImage:forElement:</definition>
@@ -136,7 +256,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="98" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="212" bodyend="220"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="104" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="220" bodyend="228"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1ab8a1b7fd195667444b246415ebf4038b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -174,7 +294,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="110" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="221" bodyend="234"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="116" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="229" bodyend="242"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1ae6269e8333319361ae73bb76bb637f87" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -212,121 +332,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="122" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="235" bodyend="244"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>void</type>
-        <definition>void ICOFamily::setImage:forCustomSize:</definition>
-        <argsstring>(NSImage *image,[forCustomSize] NSSize size)</argsstring>
-        <name>setImage:forCustomSize:</name>
-        <param>
-          <type>NSImage *</type>
-          <declname>image</declname>
-        </param>
-        <param>
-          <attributes>[forCustomSize]</attributes>
-          <type>NSSize</type>
-          <declname>size</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>The size must not be NSZeroSize and the image&apos;s size and the specified size must match or this will do nothing. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>image</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Image to set to the specified size </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>size</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Size to set the image to</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a2211781f0e33c59244138761f3a79a9a" kindref="member">- setBitmapImageRep:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a9f214507e9888bb583d6442593f2f95f" kindref="member">- setData:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1aa71a4f4eddb10efe738b089b5fa262b1" kindref="member">- dataForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1ac030eb99213f78e0879ade150ffbe89e" kindref="member">- imageForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a905a12fd63201d1dadd2b647b4843b6c" kindref="member">- bitmapImageRepForCustomSize:</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="134" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="71" bodyend="76"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_i_c_o_family_1a2211781f0e33c59244138761f3a79a9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>void</type>
-        <definition>void ICOFamily::setBitmapImageRep:forCustomSize:</definition>
-        <argsstring>(NSBitmapImageRep *rep,[forCustomSize] NSSize size)</argsstring>
-        <name>setBitmapImageRep:forCustomSize:</name>
-        <param>
-          <type>NSBitmapImageRep *</type>
-          <declname>rep</declname>
-        </param>
-        <param>
-          <attributes>[forCustomSize]</attributes>
-          <type>NSSize</type>
-          <declname>size</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>The size must not be NSZeroSize and the image&apos;s pixel size and the specified size must match or this will do nothing. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>rep</parametername>
-</parameternamelist>
-<parameterdescription>
-<para><computeroutput>NSBitmapImageRep</computeroutput> to set to the specified size </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>size</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Size to set the image repersentation to</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" kindref="member">- setImage:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a9f214507e9888bb583d6442593f2f95f" kindref="member">- setData:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1aa71a4f4eddb10efe738b089b5fa262b1" kindref="member">- dataForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1ac030eb99213f78e0879ade150ffbe89e" kindref="member">- imageForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a905a12fd63201d1dadd2b647b4843b6c" kindref="member">- bitmapImageRepForCustomSize:</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="145" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="77" bodyend="88"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_i_c_o_family_1a9f214507e9888bb583d6442593f2f95f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>void</type>
-        <definition>void ICOFamily::setData:forCustomSize:</definition>
-        <argsstring>(NSData *data,[forCustomSize] NSSize size)</argsstring>
-        <name>setData:forCustomSize:</name>
-        <param>
-          <type>NSData *</type>
-          <declname>data</declname>
-        </param>
-        <param>
-          <attributes>[forCustomSize]</attributes>
-          <type>NSSize</type>
-          <declname>size</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>The size must not be NSZeroSize and the image&apos;s size and the specified size must match or this will do nothing. <parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>data</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Data to set to the specified size </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>size</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Size to set the image to</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a2211781f0e33c59244138761f3a79a9a" kindref="member">- setBitmapImageRep:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" kindref="member">- setImage:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1aa71a4f4eddb10efe738b089b5fa262b1" kindref="member">- dataForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1ac030eb99213f78e0879ade150ffbe89e" kindref="member">- imageForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a905a12fd63201d1dadd2b647b4843b6c" kindref="member">- bitmapImageRepForCustomSize:</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="156" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="89" bodyend="95"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="128" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="243" bodyend="252"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1a1cc28b100052d7ac4649d5fb3114634c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -368,7 +374,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="172" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="106" bodyend="200"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="145" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="114" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1a3e005c57b719cb31f37c90815547d900" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>NSData *</type>
@@ -382,7 +388,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Gets the PNG representation of the specified @ kICOFamilyElement. <parameterlist kind="param"><parameteritem>
+<para>Gets the PNG representation of the specified <computeroutput>kICOFamilyElement</computeroutput>. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>element</parametername>
 </parameternamelist>
@@ -395,7 +401,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="182" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="246" bodyend="249"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="154" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="254" bodyend="257"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1a0e0f7d3ce2308da2c5f17868f8008fde" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>NSImage *</type>
@@ -409,7 +415,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Gets the <computeroutput>NSImage</computeroutput> representation of the specified @ kICOFamilyElement. <parameterlist kind="param"><parameteritem>
+<para>Gets the <computeroutput>NSImage</computeroutput> representation of the specified <computeroutput>kICOFamilyElement</computeroutput>. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>element</parametername>
 </parameternamelist>
@@ -422,7 +428,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="190" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="250" bodyend="252"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="162" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="258" bodyend="260"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1a1d862aa3444245957d7548d84af67b03" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>NSBitmapImageRep *</type>
@@ -436,7 +442,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Gets the <computeroutput>NSBitmapImageRep</computeroutput> of the specified @ kICOFamilyElement. <parameterlist kind="param"><parameteritem>
+<para>Gets the <computeroutput>NSBitmapImageRep</computeroutput> of the specified <computeroutput>kICOFamilyElement</computeroutput>. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>element</parametername>
 </parameternamelist>
@@ -449,7 +455,125 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="198" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="253" bodyend="255"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="170" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="261" bodyend="263"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Using Custom Image Sizes</header>
+      <description><para><anchor id="_1amgrpfad549e0abc2318a8ccc4915b2281007"/> </para></description>
+      <memberdef kind="function" id="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ICOFamily::setImage:forCustomSize:</definition>
+        <argsstring>(NSImage *image,[forCustomSize] NSSize size)</argsstring>
+        <name>setImage:forCustomSize:</name>
+        <param>
+          <type>NSImage *</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <attributes>[forCustomSize]</attributes>
+          <type>NSSize</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The size must not be NSZeroSize and the image&apos;s size and the specified size must match or this will do nothing. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image to set to the specified size </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size to set the image to</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a2211781f0e33c59244138761f3a79a9a" kindref="member">- setBitmapImageRep:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a9f214507e9888bb583d6442593f2f95f" kindref="member">- setData:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1aa71a4f4eddb10efe738b089b5fa262b1" kindref="member">- dataForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1ac030eb99213f78e0879ade150ffbe89e" kindref="member">- imageForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a905a12fd63201d1dadd2b647b4843b6c" kindref="member">- bitmapImageRepForCustomSize:</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="187" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="79" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_i_c_o_family_1a2211781f0e33c59244138761f3a79a9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ICOFamily::setBitmapImageRep:forCustomSize:</definition>
+        <argsstring>(NSBitmapImageRep *rep,[forCustomSize] NSSize size)</argsstring>
+        <name>setBitmapImageRep:forCustomSize:</name>
+        <param>
+          <type>NSBitmapImageRep *</type>
+          <declname>rep</declname>
+        </param>
+        <param>
+          <attributes>[forCustomSize]</attributes>
+          <type>NSSize</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The size must not be NSZeroSize and the image&apos;s pixel size and the specified size must match or this will do nothing. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><computeroutput>NSBitmapImageRep</computeroutput> to set to the specified size </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size to set the image repersentation to</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" kindref="member">- setImage:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a9f214507e9888bb583d6442593f2f95f" kindref="member">- setData:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1aa71a4f4eddb10efe738b089b5fa262b1" kindref="member">- dataForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1ac030eb99213f78e0879ade150ffbe89e" kindref="member">- imageForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a905a12fd63201d1dadd2b647b4843b6c" kindref="member">- bitmapImageRepForCustomSize:</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="199" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="85" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="interface_i_c_o_family_1a9f214507e9888bb583d6442593f2f95f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ICOFamily::setData:forCustomSize:</definition>
+        <argsstring>(NSData *data,[forCustomSize] NSSize size)</argsstring>
+        <name>setData:forCustomSize:</name>
+        <param>
+          <type>NSData *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <attributes>[forCustomSize]</attributes>
+          <type>NSSize</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The size must not be NSZeroSize and the image&apos;s size and the specified size must match or this will do nothing. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data to set to the specified size </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size to set the image to</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a2211781f0e33c59244138761f3a79a9a" kindref="member">- setBitmapImageRep:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" kindref="member">- setImage:forCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1aa71a4f4eddb10efe738b089b5fa262b1" kindref="member">- dataForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1ac030eb99213f78e0879ade150ffbe89e" kindref="member">- imageForCustomSize:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a905a12fd63201d1dadd2b647b4843b6c" kindref="member">- bitmapImageRepForCustomSize:</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="210" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="97" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1aa71a4f4eddb10efe738b089b5fa262b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>NSData *</type>
@@ -476,7 +600,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="209" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="96" bodyend="99"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="222" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="104" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1ac030eb99213f78e0879ade150ffbe89e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>NSImage *</type>
@@ -503,7 +627,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="218" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="100" bodyend="102"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="231" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="108" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="interface_i_c_o_family_1a905a12fd63201d1dadd2b647b4843b6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>NSBitmapImageRep *</type>
@@ -530,26 +654,31 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="228" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="103" bodyend="105"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="241" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="111" bodyend="113"/>
       </memberdef>
-      <memberdef kind="function" id="interface_i_c_o_family_1a1c78620ef7a5a06eabb1ae2670a937fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>NSImage *</type>
-        <definition>NSImage * ICOFamily::imageWithAllReps</definition>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Writing the ICO.</header>
+      <description><para><anchor id="_1amgrpbfce43e8a750447d4e8399f1d2b4d372"/> </para></description>
+      <memberdef kind="function" id="interface_i_c_o_family_1aa6a569fce89d41adc4d72380c751d0ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>NSData *</type>
+        <definition>NSData * ICOFamily::data</definition>
         <argsstring>()</argsstring>
-        <name>imageWithAllReps</name>
+        <name>data</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Gets an image with all of the representations of the <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance. If no elements have been set, returns a blank NSImage. <simplesect kind="return"><para>Returns an autoreleased <computeroutput>NSImage</computeroutput> instance with all of the representations retrieved from <computeroutput>elements</computeroutput> </para></simplesect>
-<simplesect kind="see"><para>elements </para></simplesect>
+<para>Gets the raw <computeroutput>NSData</computeroutput> object for the ICO file If there are no representations set, this returns nil.</para><para><simplesect kind="return"><para>Returns the raw data for the ICO file for use when saving. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="234" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="201" bodyend="211"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="251" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="295" bodyend="357"/>
       </memberdef>
-      <memberdef kind="function" id="interface_i_c_o_family_1aa5ac9b74b0700e69c5dae54dd7e4cd4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interface_i_c_o_family_1aa38775f8066060c52d745d9357820cfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>BOOL</type>
-        <definition>BOOL ICOFamily::verifyImageOfSize:forElement:</definition>
+        <definition>BOOL ICOFamily(Private)::verifyImageOfSize:forElement:</definition>
         <argsstring>(NSSize size,[forElement] kICOFamilyElement element)</argsstring>
         <name>verifyImageOfSize:forElement:</name>
         <param>
@@ -567,118 +696,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="236" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="256" bodyend="284"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_i_c_o_family_1aa6a569fce89d41adc4d72380c751d0ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>NSData *</type>
-        <definition>NSData * ICOFamily::data</definition>
-        <argsstring>()</argsstring>
-        <name>data</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Gets the raw <computeroutput>NSData</computeroutput> object for the ICO file If there are no representations set, this returns nil.</para><para><simplesect kind="return"><para>Returns the raw data for the ICO file for use when saving. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="242" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="287" bodyend="349"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="interface_i_c_o_family_1ae4b4c6259b060b9d46e9e90f9106c224" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
-        <type>id</type>
-        <definition>id ICOFamily::family</definition>
-        <argsstring>()</argsstring>
-        <name>family</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Creates an <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance and returns it autoreleased. <simplesect kind="see"><para><ref refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kindref="member">+ familyWithImage:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" kindref="member">+ familyWithBitmapImageRep:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" kindref="member">+ familyWithData:</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="56" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="44" bodyend="47"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
-        <type>id</type>
-        <definition>id ICOFamily::familyWithImage:</definition>
-        <argsstring>(NSImage *image)</argsstring>
-        <name>familyWithImage:</name>
-        <param>
-          <type>NSImage *</type>
-          <declname>image</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Creates an <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance and returns it autoreleased after setting the image.</para><para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>image</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The image to initially set. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1ae4b4c6259b060b9d46e9e90f9106c224" kindref="member">+ family</ref>: </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" kindref="member">+ familyWithBitmapImageRep:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" kindref="member">+ familyWithData:</ref> </para></simplesect>
-<simplesect kind="return"><para>Returns an autoreleased <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="65" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="48" bodyend="52"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
-        <type>id</type>
-        <definition>id ICOFamily::familyWithBitmapImageRep:</definition>
-        <argsstring>(NSBitmapImageRep *rep)</argsstring>
-        <name>familyWithBitmapImageRep:</name>
-        <param>
-          <type>NSBitmapImageRep *</type>
-          <declname>rep</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Creates an <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance and returns it autoreleased after setting the <computeroutput>NSBitmapImageRep</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>rep</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The <computeroutput>NSBitmapImageRep</computeroutput> to initially set. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1ae4b4c6259b060b9d46e9e90f9106c224" kindref="member">+ family</ref>: </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kindref="member">+ familyWithImage:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" kindref="member">+ familyWithData:</ref> </para></simplesect>
-<simplesect kind="return"><para>Returns an autoreleased <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="74" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="53" bodyend="57"/>
-      </memberdef>
-      <memberdef kind="function" id="interface_i_c_o_family_1a1a34873b0ed7bf5c4284ae0418f5845b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="virtual">
-        <type>id</type>
-        <definition>id ICOFamily::familyWithData:</definition>
-        <argsstring>(NSData *data)</argsstring>
-        <name>familyWithData:</name>
-        <param>
-          <type>NSData *</type>
-          <declname>data</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-<para>Creates an <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance and returns it autoreleased after setting the data.</para><para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>data</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The data to initially set. </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="see"><para><ref refid="interface_i_c_o_family_1ae4b4c6259b060b9d46e9e90f9106c224" kindref="member">+ family</ref>: </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a81641d63bfe60258d5616abe34a3158f" kindref="member">+ familyWithBitmapImageRep:</ref> </para><simplesectsep/><para><ref refid="interface_i_c_o_family_1a96b6cc7a27dbfc1e9230e0eaf7b226b3" kindref="member">+ familyWithImage:</ref> </para></simplesect>
-<simplesect kind="return"><para>Returns an autoreleased <computeroutput><ref refid="interface_i_c_o_family" kindref="compound">ICOFamily</ref></computeroutput> instance. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.h" line="83" bodyfile="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" bodystart="58" bodyend="62"/>
+        <location file="/Users/Alex/Documents/Source Code/Git/ICOFamily/ICOFamily.m" line="12"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -711,7 +729,7 @@
       <member refid="interface_i_c_o_family_1a1cc28b100052d7ac4649d5fb3114634c" prot="public" virt="virtual"><scope>ICOFamily</scope><name>setElements:fromImage:</name></member>
       <member refid="interface_i_c_o_family_1a07a24c6b9be55140d7554d55d98ba428" prot="public" virt="virtual"><scope>ICOFamily</scope><name>setImage:forCustomSize:</name></member>
       <member refid="interface_i_c_o_family_1a035e531a4d130b7fa3e8615cffcc7d6f" prot="public" virt="virtual"><scope>ICOFamily</scope><name>setImage:forElement:</name></member>
-      <member refid="interface_i_c_o_family_1aa5ac9b74b0700e69c5dae54dd7e4cd4c" prot="public" virt="virtual"><scope>ICOFamily</scope><name>verifyImageOfSize:forElement:</name></member>
+      <member refid="interface_i_c_o_family_1aa38775f8066060c52d745d9357820cfb" prot="public" virt="virtual"><scope>ICOFamily</scope><name>verifyImageOfSize:forElement:</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
