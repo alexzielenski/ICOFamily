@@ -4,7 +4,7 @@ ICOFamily is a class that I made to save a legitamite ICO file. It deals with al
 
 h2. Documentation
 
-Documentation is generated with "appledoc":http://www.gentlebytes.com/freeware/appledoc/ and included the the /Help/chtml directory. Refer back to it for documentation.
+Documentation is generated with "appledoc":http://www.gentlebytes.com/freeware/appledoc/ and included the the /Help/cxhtml directory. Refer back to it for documentation.
 
 
 h2. Usage
