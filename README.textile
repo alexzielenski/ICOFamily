@@ -1,0 +1,30 @@
+h1. ICOFamily
+
+ICOFamily is a class that I made to save a legitamite ICO file. It deals with all the dirty work. All you need to do is just set the Images you are using and save it using the provided methods. It manually adds the headers and works with 64 x 64 and 24 x 24 pixel images unlike the built in functions in Core Foundation for saving ICO files.
+
+h2. Documentation
+
+Documentation is generated with "appledoc":http://www.gentlebytes.com/freeware/appledoc/ and included the the /Help/chtml directory. Refer back to it for documentation.
+
+
+h2. Usage
+
+You should use ICOFamily just like any other class.
+<pre>
+- (NSData*)ICODataForMyApp {
+	ICOFamily *myFamily = [ICOFamily family]; // Returns an autoreleased instance
+	[myFamily setImage:bigImage256 forElement:ICOFamily256Element];
+	// etc, setting the predefined elements for the appropriate image.
+	[myFamily setImage:customImage57 forCustomSize:customImage57.size]; // You can also set any size under 256px for custom sizes in an ICO file.
+	return myFamily.data;
+}
+</pre>
+
+h2. License
+
+Uses the "Creative Commons 3.0 Attributed Unported License":http://creativecommons.org/licenses/by/3.0/
+
+I prefer that I am credited in the About box of your app if you used some of my source code with the following format:  	
+	
+	p. Uses "ICOFamily":http://github.com/alexzielenski/ICOFamily by "Alex Zielenski":http://alexzielenski.com/
+	
