@@ -10,6 +10,7 @@ Documentation is generated with "appledoc":http://www.gentlebytes.com/freeware/a
 h2. Usage
 
 You should use ICOFamily just like any other class.
+
 <pre>
 - (NSData*)ICODataForMyApp {
 	ICOFamily *myFamily = [ICOFamily family]; // Returns an autoreleased instance
