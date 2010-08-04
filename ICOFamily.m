@@ -89,7 +89,7 @@
 		return;
 	if (rep.pixelsWide!=size.width||rep.pixelsHigh!=size.height)
 		return;
-	if (size.width<=0||size.height>=256||size.height<=0||size.width>=256)
+	if (size.width<=0||size.height>256||size.height<=0||size.width>256)
 		return; // Maximum dimensions
 	[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace] 
 													renderingIntent:NSColorRenderingIntentPerceptual] forKey:NSStringFromSize(size)];
