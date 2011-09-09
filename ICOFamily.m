@@ -91,7 +91,7 @@
 		return;
 	if (size.width<=0||size.height>256||size.height<=0||size.width>256)
 		return; // Maximum dimensions
-	[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace] 
+	[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]		// NOT IN 10.5
 													renderingIntent:NSColorRenderingIntentPerceptual] forKey:NSStringFromSize(size)];
 }
 - (void)setData:(NSData*)data forCustomSize:(NSSize)size {
@@ -230,14 +230,14 @@
 	if (!rep)
 		return;
 	if ((element & kICOFamilyAllElements)==kICOFamilyAllElements) {
-		[self setElements:element fromImage:[[[NSImage alloc] initWithCGImage:rep.CGImage 
+		[self setElements:element fromImage:[[[NSImage alloc] initWithCGImage:rep.CGImage 	// NOT IN 10.5
 																		 size:NSMakeSize(rep.pixelsWide, rep.pixelsHigh)]
 											 autorelease]];
 		return;
 	}
 	if ([self verifyImageOfSize:NSMakeSize(rep.pixelsWide, rep.pixelsHigh) 
 					 forElement:element])
-		[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace] 
+		[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace] 	// NOT IN 10.5
 														renderingIntent:NSColorRenderingIntentPerceptual] forKey:[NSNumber numberWithInteger:element]];
 }
 - (void)setData:(NSData*)data forElement:(kICOFamilyElement)element {
@@ -308,8 +308,8 @@
 	NSMutableData *headers = [[NSMutableData alloc] init];
 	NSMutableData *images = [[NSMutableData alloc] init];
 	
-	NSSortDescriptor *high = [NSSortDescriptor sortDescriptorWithKey:@"pixelsHigh" ascending:NO];
-	NSSortDescriptor *pixelsWide = [NSSortDescriptor sortDescriptorWithKey:@"pixelsWide" ascending:NO];
+	NSSortDescriptor *high = [NSSortDescriptor sortDescriptorWithKey:@"pixelsHigh" ascending:NO];		// NOT IN 10.5
+	NSSortDescriptor *pixelsWide = [NSSortDescriptor sortDescriptorWithKey:@"pixelsWide" ascending:NO];		// NOT IN 10.5
 		// Sort it so it is pretty
 	NSArray *vals = [elements.allValues sortedArrayUsingDescriptors:[NSArray arrayWithObjects:
 																	 high, pixelsWide, nil]];
