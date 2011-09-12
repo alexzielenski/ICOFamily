@@ -91,8 +91,13 @@
 		return;
 	if (size.width<=0||size.height>256||size.height<=0||size.width>256)
 		return; // Maximum dimensions
-	[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]		// NOT IN 10.5
-													renderingIntent:NSColorRenderingIntentPerceptual] forKey:NSStringFromSize(size)];
+	
+	if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)])	// 10.6+ runtime only
+	{
+		rep = [rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]
+										 renderingIntent:NSColorRenderingIntentPerceptual]
+	}
+	[elements setObject:convertedRep forKey:NSStringFromSize(size)];
 }
 - (void)setData:(NSData*)data forCustomSize:(NSSize)size {
 	if (!data)
@@ -238,8 +243,14 @@
 	}
 	if ([self verifyImageOfSize:NSMakeSize(rep.pixelsWide, rep.pixelsHigh) 
 					 forElement:element])
-		[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace] 	// NOT IN 10.5
-														renderingIntent:NSColorRenderingIntentPerceptual] forKey:[NSNumber numberWithInteger:element]];
+	{
+		if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)])	// 10.6+ runtime only
+		{
+			rep = [rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]
+											  renderingIntent:NSColorRenderingIntentPerceptual]
+		}
+		[elements setObject:rep forKey:[NSNumber numberWithInteger:element]];
+	}
 }
 - (void)setData:(NSData*)data forElement:(kICOFamilyElement)element {
 	if (!data)
