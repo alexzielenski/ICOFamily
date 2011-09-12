@@ -95,9 +95,9 @@
 	if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)])	// 10.6+ runtime only
 	{
 		rep = [rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]
-										 renderingIntent:NSColorRenderingIntentPerceptual]
+                                          renderingIntent:NSColorRenderingIntentPerceptual];
 	}
-	[elements setObject:convertedRep forKey:NSStringFromSize(size)];
+	[elements setObject:rep forKey:NSStringFromSize(size)];
 }
 - (void)setData:(NSData*)data forCustomSize:(NSSize)size {
 	if (!data)
@@ -247,7 +247,7 @@
 		if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)])	// 10.6+ runtime only
 		{
 			rep = [rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]
-											  renderingIntent:NSColorRenderingIntentPerceptual]
+											  renderingIntent:NSColorRenderingIntentPerceptual];
 		}
 		[elements setObject:rep forKey:[NSNumber numberWithInteger:element]];
 	}
