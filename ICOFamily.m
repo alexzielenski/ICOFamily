@@ -337,17 +337,15 @@
 		int iheight=currentRep.pixelsHigh;
 		if (iheight==256)
 			iheight=0;
-		const char *width = [[NSString stringWithFormat:@"%i", iwidth] UTF8String];
-		const char *height = [[NSString stringWithFormat:@"%i", iheight] UTF8String];
-		const char *palette = "0";
-		const char *reserved = "0";
+		const char palette = 0;
+		const char reserved = 0;
 		short planes = currentRep.numberOfPlanes;
 		short bpp = currentRep.bitsPerPixel; // bits per pixel
 		int size = bitmapData.length;
-		[headers appendBytes:width length:sizeof(const char)]; // 0 - 255 and 0 = 256
-		[headers appendBytes:height length:sizeof(const char)]; // 0 - 255 and 0 = 256
-		[headers appendBytes:palette length:sizeof(const char)];
-		[headers appendBytes:reserved length:sizeof(const char)];
+		[headers appendBytes:&iwidth length:sizeof(const char)]; // 0 - 255 and 0 = 256
+		[headers appendBytes:&iheight length:sizeof(const char)]; // 0 - 255 and 0 = 256
+		[headers appendBytes:&palette length:sizeof(const char)];
+		[headers appendBytes:&reserved length:sizeof(const char)];
 		[headers appendBytes:&planes length:sizeof(short)];
 		[headers appendBytes:&bpp length:sizeof(short)];
 		[headers appendBytes:&size length:sizeof(int)];
