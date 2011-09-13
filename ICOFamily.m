@@ -302,6 +302,18 @@
 	}
 	return (size.width == desiredSize.width && size.height == desiredSize.height);
 }
+
+struct bmpfile_magic {
+	unsigned char magic[2];
+};
+
+struct bmpfile_header {
+	uint32_t filesz;
+	uint16_t creator1;
+	uint16_t creator2;
+	uint32_t bmp_offset;
+};
+
 #pragma mark -
 #pragma mark Handling Data
 - (NSData*)data {	
@@ -327,10 +339,24 @@
 																	 high, pixelsWide, nil]];
 	
 	for (NSBitmapImageRep *currentRep in vals) {
-		NSData *bitmapData = [currentRep representationUsingType:NSPNGFileType 
+		NSData *fullBitmapData = [currentRep representationUsingType:NSBMPFileType	
+								  
 													  properties:nil];
-			// Image header
 		
+		if (!fullBitmapData)
+		{
+			NSLog(@"Could not convert size %d to BMP", currentRep.pixelsWide);
+			continue;	// no point continuing if it couldn't convert. How to express error?
+		}
+		
+		[fullBitmapData writeToFile:[[NSString stringWithFormat:@"~/Desktop/converted_%d.bmp", currentRep.pixelsWide] stringByExpandingTildeInPath]
+						 atomically:NO];
+		// Needs to be exclude the opening BITMAPFILEHEADER structure
+		size_t bitmapFileHeaderSize = sizeof(struct bmpfile_magic) + sizeof(struct bmpfile_header);
+		NSData *bitmapData = [fullBitmapData subdataWithRange:NSMakeRange(bitmapFileHeaderSize, [fullBitmapData length] - bitmapFileHeaderSize)];
+
+		// Image header
+
 		int iwidth = currentRep.pixelsWide;
 		if (iwidth==256)
 			iwidth=0;
