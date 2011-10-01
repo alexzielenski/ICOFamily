@@ -91,8 +91,13 @@
 		return;
 	if (size.width<=0||size.height>256||size.height<=0||size.width>256)
 		return; // Maximum dimensions
-	[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace] 
-													renderingIntent:NSColorRenderingIntentPerceptual] forKey:NSStringFromSize(size)];
+	
+	if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)])	// 10.6+ runtime only
+	{
+		rep = [rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]
+                                          renderingIntent:NSColorRenderingIntentPerceptual];
+	}
+	[elements setObject:rep forKey:NSStringFromSize(size)];
 }
 - (void)setData:(NSData*)data forCustomSize:(NSSize)size {
 	if (!data)
@@ -230,15 +235,22 @@
 	if (!rep)
 		return;
 	if ((element & kICOFamilyAllElements)==kICOFamilyAllElements) {
-		[self setElements:element fromImage:[[[NSImage alloc] initWithCGImage:rep.CGImage 
-																		 size:NSMakeSize(rep.pixelsWide, rep.pixelsHigh)]
-											 autorelease]];
+		NSBitmapImageRep *bitmapRep = [[[NSBitmapImageRep alloc] initWithCGImage:rep.CGImage] autorelease];
+		NSImage *image = [[[NSImage alloc] init] autorelease];
+		[image addRepresentation:bitmapRep];
+		[self setElements:element fromImage:image];
 		return;
 	}
 	if ([self verifyImageOfSize:NSMakeSize(rep.pixelsWide, rep.pixelsHigh) 
 					 forElement:element])
-		[elements setObject:[rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace] 
-														renderingIntent:NSColorRenderingIntentPerceptual] forKey:[NSNumber numberWithInteger:element]];
+	{
+		if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)])	// 10.6+ runtime only
+		{
+			rep = [rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]
+											  renderingIntent:NSColorRenderingIntentPerceptual];
+		}
+		[elements setObject:rep forKey:[NSNumber numberWithInteger:element]];
+	}
 }
 - (void)setData:(NSData*)data forElement:(kICOFamilyElement)element {
 	if (!data)
@@ -290,6 +302,18 @@
 	}
 	return (size.width == desiredSize.width && size.height == desiredSize.height);
 }
+
+struct bmpfile_magic {
+	unsigned char magic[2];
+};
+
+struct bmpfile_header {
+	uint32_t filesz;
+	uint16_t creator1;
+	uint16_t creator2;
+	uint32_t bmp_offset;
+};
+
 #pragma mark -
 #pragma mark Handling Data
 - (NSData*)data {	
@@ -308,34 +332,46 @@
 	NSMutableData *headers = [[NSMutableData alloc] init];
 	NSMutableData *images = [[NSMutableData alloc] init];
 	
-	NSSortDescriptor *high = [NSSortDescriptor sortDescriptorWithKey:@"pixelsHigh" ascending:NO];
-	NSSortDescriptor *pixelsWide = [NSSortDescriptor sortDescriptorWithKey:@"pixelsWide" ascending:NO];
+	NSSortDescriptor *high = [[[NSSortDescriptor alloc] initWithKey:@"pixelsHigh" ascending:NO] autorelease];
+	NSSortDescriptor *pixelsWide = [[[NSSortDescriptor alloc] initWithKey:@"pixelsWide" ascending:NO] autorelease];
 		// Sort it so it is pretty
 	NSArray *vals = [elements.allValues sortedArrayUsingDescriptors:[NSArray arrayWithObjects:
 																	 high, pixelsWide, nil]];
 	
 	for (NSBitmapImageRep *currentRep in vals) {
-		NSData *bitmapData = [currentRep representationUsingType:NSPNGFileType 
+		NSData *fullBitmapData = [currentRep representationUsingType:NSBMPFileType	
+								  
 													  properties:nil];
-			// Image header
 		
+		if (!fullBitmapData)
+		{
+			NSLog(@"Could not convert size %d to BMP", currentRep.pixelsWide);
+			continue;	// no point continuing if it couldn't convert. How to express error?
+		}
+		
+		[fullBitmapData writeToFile:[[NSString stringWithFormat:@"~/Desktop/converted_%d.bmp", currentRep.pixelsWide] stringByExpandingTildeInPath]
+						 atomically:NO];
+		// Needs to be exclude the opening BITMAPFILEHEADER structure
+		size_t bitmapFileHeaderSize = sizeof(struct bmpfile_magic) + sizeof(struct bmpfile_header);
+		NSData *bitmapData = [fullBitmapData subdataWithRange:NSMakeRange(bitmapFileHeaderSize, [fullBitmapData length] - bitmapFileHeaderSize)];
+
+		// Image header
+
 		int iwidth = currentRep.pixelsWide;
 		if (iwidth==256)
 			iwidth=0;
 		int iheight=currentRep.pixelsHigh;
 		if (iheight==256)
 			iheight=0;
-		const char *width = [[NSString stringWithFormat:@"%i", iwidth] UTF8String];
-		const char *height = [[NSString stringWithFormat:@"%i", iheight] UTF8String];
-		const char *palette = "0";
-		const char *reserved = "0";
+		const char palette = 0;
+		const char reserved = 0;
 		short planes = currentRep.numberOfPlanes;
 		short bpp = currentRep.bitsPerPixel; // bits per pixel
 		int size = bitmapData.length;
-		[headers appendBytes:width length:sizeof(const char)]; // 0 - 255 and 0 = 256
-		[headers appendBytes:height length:sizeof(const char)]; // 0 - 255 and 0 = 256
-		[headers appendBytes:palette length:sizeof(const char)];
-		[headers appendBytes:reserved length:sizeof(const char)];
+		[headers appendBytes:&iwidth length:sizeof(const char)]; // 0 - 255 and 0 = 256
+		[headers appendBytes:&iheight length:sizeof(const char)]; // 0 - 255 and 0 = 256
+		[headers appendBytes:&palette length:sizeof(const char)];
+		[headers appendBytes:&reserved length:sizeof(const char)];
 		[headers appendBytes:&planes length:sizeof(short)];
 		[headers appendBytes:&bpp length:sizeof(short)];
 		[headers appendBytes:&size length:sizeof(int)];
