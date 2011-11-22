@@ -6,9 +6,49 @@
 //  Copyright 2010 Alex Zielenski. All rights reserved.
 //
 
+#import <Accelerate/Accelerate.h>
+#import "NSMutableData+EndianValues.h"
+
 #import "ICOFamily.h"
 
-	// We use NSBitmapImageRep so we can get some extra specifications required by the ICO file type
+// According to http://msdn.microsoft.com/en-us/library/dd183376.aspx
+typedef struct BitMapInfoHeader
+{
+    uint32_t     biSize;          // bitmap header size - should be 40
+    int32_t      biWidth;         // bitmap pixel width
+    int32_t      biHeight;        // bitmap pixel height; double for ico due to and map
+    uint16_t     biPlanes;        // should be 1, 0 may work also
+    uint16_t     biBitCount;      // Bits per pixel
+    uint32_t     biCompression;   // 0 = uncompressed RGB/RGBA, 1 = run-length-encoded 8bpp, 2 = rle 4bpp
+    uint32_t     biSizeImage;     // bitmap data size
+    int32_t      biXPelsPerMeter; // usually 2835
+    int32_t      biYPelsPerMeter; // usually 2835
+    uint32_t     biClrUsed;       // 0 = 32 bit
+    uint32_t     biClrImportant;  // 0
+} __attribute__ ((__packed__)) BitMapInfoHeader;
+
+// According to http://msdn.microsoft.com/en-us/library/ms997538.aspx
+typedef struct IconDirEntry
+{
+    uint8_t      bWidth;          // Width, in pixels, of the image
+    uint8_t      bHeight;         // Height, in pixels, of the image
+    uint8_t      bColorCount;     // Number of colors in image (0 if >=8bpp)
+    uint8_t      bReserved;       // Reserved
+    uint16_t     wPlanes;         // Color Planes
+    uint16_t     wBitCount;       // Bits per pixel
+    uint32_t     dwBytesInRes;    // how many bytes in this resource?
+    uint32_t     dwImageOffset;   // Where in the file is this image?
+} __attribute__ ((__packed__)) IconDirEntry;
+
+// According to http://msdn.microsoft.com/en-us/library/ms997538.aspx
+typedef struct IconDir
+{
+    uint16_t     idReserved;      // Reserved (must be 0)
+    uint16_t     idType;          // Resource type (1 for icons)
+    uint16_t     idCount;         // How many images?
+    IconDirEntry idEntries[1];    // // The entries for each image
+} __attribute__ ((__packed__)) IconDir;
+
 @interface ICOFamily (Private)
 
 - (BOOL)verifyImageOfSize:(NSSize)size forElement:(kICOFamilyElement)element;
@@ -22,9 +62,6 @@
 - init {
 	if ((self = [super init])) {
 		self.elements=[[NSMutableDictionary alloc] init];
-		
-		//NSImage *im = [NSImage imageNamed:@"NSApplicationIcon"]; // That was for testing
-		//[self setElements:kICOFamilyAllElements fromImage:im]; // For Testing
 	}
 	return self;
 }
@@ -43,7 +80,6 @@
 }
 - initWithData:(NSData*)data {
 	if ((self = [self init])) {
-			// Use NSImage to read :P
 		[self setData:data forElement:kICOFamilyAllElements];
 	}
 	return self;
@@ -303,94 +339,131 @@
 	return (size.width == desiredSize.width && size.height == desiredSize.height);
 }
 
-struct bmpfile_magic {
-	unsigned char magic[2];
-};
-
-struct bmpfile_header {
-	uint32_t filesz;
-	uint16_t creator1;
-	uint16_t creator2;
-	uint32_t bmp_offset;
-};
-
 #pragma mark -
 #pragma mark Handling Data
-- (NSData*)data {	
-		// Write the BitmapInfoHeader to the data
+- (NSData*)data {
 	NSMutableData *data = [NSMutableData data];
-	short zero = 0;
-	short type = 1; // 1 for ICO and 2 for CUR cursor file
-	short count = elements.count;
-		// Write the header to the data
-	[data appendBytes:&zero length:sizeof(short)];
-	[data appendBytes:&type length:sizeof(short)];
-	[data appendBytes:&count length:sizeof(short)];
-	
-
-		// Write Image Headers
+    IconDir        iconDir;
+    
+    iconDir.idReserved = 0;
+    iconDir.idType = 1;
+    iconDir.idCount = elements.count;
+    
+    // Write ico header (icon directory)
+    [data appendLEUInt16:iconDir.idReserved];
+    [data appendLEUInt16:iconDir.idType];
+    [data appendLEUInt16:iconDir.idCount];
+    
+    // Prepare image headers & image data
 	NSMutableData *headers = [[NSMutableData alloc] init];
 	NSMutableData *images = [[NSMutableData alloc] init];
 	
-	NSSortDescriptor *high = [[[NSSortDescriptor alloc] initWithKey:@"pixelsHigh" ascending:NO] autorelease];
-	NSSortDescriptor *pixelsWide = [[[NSSortDescriptor alloc] initWithKey:@"pixelsWide" ascending:NO] autorelease];
-		// Sort it so it is pretty
-	NSArray *vals = [elements.allValues sortedArrayUsingDescriptors:[NSArray arrayWithObjects:
-																	 high, pixelsWide, nil]];
+    // Sort the elements
+	NSSortDescriptor *sortHigh = [[[NSSortDescriptor alloc] initWithKey:@"pixelsHigh" ascending:NO] autorelease];
+	NSSortDescriptor *sortWide = [[[NSSortDescriptor alloc] initWithKey:@"pixelsWide" ascending:NO] autorelease];
+	NSArray *vals = [elements.allValues sortedArrayUsingDescriptors:[NSArray arrayWithObjects: sortHigh, sortWide, nil]];
 	
+    // Work through each icon
 	for (NSBitmapImageRep *currentRep in vals) {
-		NSData *fullBitmapData = [currentRep representationUsingType:NSBMPFileType	
-								  
-													  properties:nil];
-		
-		if (!fullBitmapData)
-		{
-			NSLog(@"Could not convert size %d to BMP", currentRep.pixelsWide);
-			continue;	// no point continuing if it couldn't convert. How to express error?
-		}
-		
-		[fullBitmapData writeToFile:[[NSString stringWithFormat:@"~/Desktop/converted_%d.bmp", currentRep.pixelsWide] stringByExpandingTildeInPath]
-						 atomically:NO];
-		// Needs to be exclude the opening BITMAPFILEHEADER structure
-		size_t bitmapFileHeaderSize = sizeof(struct bmpfile_magic) + sizeof(struct bmpfile_header);
-		NSData *bitmapData = [fullBitmapData subdataWithRange:NSMakeRange(bitmapFileHeaderSize, [fullBitmapData length] - bitmapFileHeaderSize)];
+        BitMapInfoHeader    bitmapHeader;
+        IconDirEntry        entryHeader;
+        
+        uint32_t            bmpSize = currentRep.pixelsHigh * currentRep.bytesPerRow;
+        uint32_t            andSize = ((((currentRep.pixelsWide) + 31) >> 5) << 2);
+        
+        vImage_Buffer       bmpBuf;
+        vImage_Buffer       tmpBuf;
+        vImage_Buffer       andBuf;
+        
+        // Initialize the image buffers
+        bmpBuf.height = currentRep.pixelsHigh;
+        bmpBuf.width = currentRep.pixelsWide;
+        bmpBuf.rowBytes = currentRep.bytesPerRow;
+        bmpBuf.data =  malloc(bmpSize);
+        
+        tmpBuf.height = currentRep.pixelsHigh;
+        tmpBuf.width = currentRep.pixelsWide;
+        tmpBuf.rowBytes = currentRep.bytesPerRow;
+        tmpBuf.data =  malloc(bmpSize);
+        
+        andBuf.height = currentRep.pixelsHigh;
+        andBuf.width = currentRep.pixelsWide;
+        andBuf.rowBytes = currentRep.bytesPerRow;
+        andBuf.data = malloc(andSize);
+        
+        memcpy(bmpBuf.data, currentRep.bitmapData, bmpSize);
+        memset(andBuf.data, 0, andSize);
 
-		// Image header
-
-		int iwidth = currentRep.pixelsWide;
-		if (iwidth==256)
-			iwidth=0;
-		int iheight=currentRep.pixelsHigh;
-		if (iheight==256)
-			iheight=0;
-		const char palette = 0;
-		const char reserved = 0;
-		short planes = currentRep.numberOfPlanes;
-		short bpp = currentRep.bitsPerPixel; // bits per pixel
-		int size = bitmapData.length;
-		[headers appendBytes:&iwidth length:sizeof(const char)]; // 0 - 255 and 0 = 256
-		[headers appendBytes:&iheight length:sizeof(const char)]; // 0 - 255 and 0 = 256
-		[headers appendBytes:&palette length:sizeof(const char)];
-		[headers appendBytes:&reserved length:sizeof(const char)];
-		[headers appendBytes:&planes length:sizeof(short)];
-		[headers appendBytes:&bpp length:sizeof(short)];
-		[headers appendBytes:&size length:sizeof(int)];
-		
-			// Calculate the header offset
-		int eachheader = 16; // The size of each image header in bytes (including the offset)
-		int offset=eachheader*elements.count+images.length+data.length; // Gets the soon-to-be size of the file header and all of the image headers combined so an offset can be calculated for the image. Adding images.length adds the current offset for the image before the image gets added. Because we dont want offset+lengths. Data.lenght would be the root header's size in bytes. (6)
-		
-		[headers appendBytes:&offset length:sizeof(int)];
-		
-			// Add the raw image data the the images data
-		[images appendBytes:bitmapData.bytes length:bitmapData.length];
+        // Initialize the ICO bitmap header
+        bitmapHeader.biSize = 40; // 40 byte header
+        bitmapHeader.biWidth = currentRep.pixelsWide;
+        bitmapHeader.biHeight = currentRep.pixelsHigh * 2; // double height due to and map
+        bitmapHeader.biPlanes = 1;
+        bitmapHeader.biBitCount = currentRep.bitsPerPixel;
+        bitmapHeader.biCompression = 0;
+        bitmapHeader.biSizeImage = bmpSize + andSize;
+        bitmapHeader.biXPelsPerMeter = 0;//2835;
+        bitmapHeader.biYPelsPerMeter = 0;//2835;
+        bitmapHeader.biClrUsed = 0;
+        bitmapHeader.biClrImportant = 0;
+        
+        // Initialize the ICO directory entry
+        entryHeader.bWidth = (currentRep.pixelsWide == 256 ? 0 : currentRep.pixelsWide);
+        entryHeader.bHeight = (currentRep.pixelsHigh == 256 ? 0 : currentRep.pixelsHigh);
+        entryHeader.bColorCount = 0;
+        entryHeader.bReserved = 0;
+        entryHeader.wPlanes = currentRep.numberOfPlanes; // must be 1
+        entryHeader.wBitCount = currentRep.bitsPerPixel; // must be 32
+        entryHeader.dwBytesInRes = bitmapHeader.biSizeImage + 40;
+        entryHeader.dwImageOffset = 16 * elements.count+images.length+data.length;
+        
+        // "Write" the ICO header data
+        [headers appendLEUInt8:entryHeader.bWidth];
+        [headers appendLEUInt8:entryHeader.bHeight];
+        [headers appendLEUInt8:entryHeader.bColorCount];
+        [headers appendLEUInt8:entryHeader.bReserved];
+        [headers appendLEUInt16:entryHeader.wPlanes];
+        [headers appendLEUInt16:entryHeader.wBitCount];
+        [headers appendLEUInt32:entryHeader.dwBytesInRes];
+        [headers appendLEUInt32:entryHeader.dwImageOffset];
+        
+        // "Write" the bitmap header data
+        [images appendLEUInt32:bitmapHeader.biSize];
+        [images appendLESInt32:bitmapHeader.biWidth];
+        [images appendLESInt32:bitmapHeader.biHeight];
+        [images appendLEUInt16:bitmapHeader.biPlanes];
+        [images appendLEUInt16:bitmapHeader.biBitCount];
+        [images appendLEUInt32:bitmapHeader.biCompression];
+        [images appendLEUInt32:bitmapHeader.biSizeImage];
+        [images appendLESInt32:bitmapHeader.biXPelsPerMeter];
+        [images appendLESInt32:bitmapHeader.biYPelsPerMeter];
+        [images appendLEUInt32:bitmapHeader.biClrUsed];
+        [images appendLEUInt32:bitmapHeader.biClrImportant];
+        
+        // Fix the bitmap image data to be compatible
+        const uint8_t permuteMap[4] = {3,2,1,0};
+        vImagePermuteChannels_ARGB8888 (&bmpBuf,&tmpBuf,permuteMap,kvImageDoNotTile);
+        vImageVerticalReflect_ARGB8888 (&tmpBuf,&bmpBuf,kvImageDoNotTile);
+        
+        // "Write" the bitmap image/mask data
+        [images appendBytes:bmpBuf.data length:bmpSize];
+        [images appendBytes:andBuf.data length:andSize];
+        
+		free(bmpBuf.data);
+        free(tmpBuf.data);
+        free(andBuf.data);
 	}
+    
+    // Copy images & headers into ico data
 	[data appendBytes:headers.bytes length:headers.length];
 	[data appendBytes:images.bytes length:images.length];
+    
 	[headers release];
 	[images release];
-	return data;
+	
+    return data;
 }
+
 - (void)readFromData:(NSData*)data { // Not yet. Might need help with this one. For now just use NSImage ;) 
 	NSData *header = [data subdataWithRange:NSMakeRange(0, 6)];
 	
@@ -431,7 +504,7 @@ struct bmpfile_header {
 		
 			// bpp, planes, size, and offset are pretty much the only things that could possibly matter to use
 		
-		NSLog(@"%hi", offset);
+		NSLog(@"%d", offset);
 	}
 }
 
