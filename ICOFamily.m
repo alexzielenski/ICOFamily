@@ -128,8 +128,7 @@ typedef struct IconDir
 	if (size.width<=0||size.height>256||size.height<=0||size.width>256)
 		return; // Maximum dimensions
 	
-	if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)])	// 10.6+ runtime only
-	{
+	if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)]) {	// 10.6+ runtime only
 		rep = [rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]
                                           renderingIntent:NSColorRenderingIntentPerceptual];
 	}
@@ -138,7 +137,7 @@ typedef struct IconDir
 - (void)setData:(NSData*)data forCustomSize:(NSSize)size {
 	if (!data)
 		return;
-
+	
 	NSBitmapImageRep *nr = [NSBitmapImageRep imageRepWithData:data];
 	[self setBitmapImageRep:nr forCustomSize:size];
 }
@@ -150,101 +149,46 @@ typedef struct IconDir
 	return [[[NSImage alloc] initWithData:[self dataForCustomSize:size]] autorelease];
 }
 - (NSBitmapImageRep*)bitmapImageRepForCustomSize:(NSSize)size {
-	return [self bitmapImageRepForCustomSize:size];
+	return [elements objectForKey:NSStringFromSize(size)];
 }
 - (void)setElements:(kICOFamilyElement)element fromImage:(NSImage*)im {
 	if (!im)
 		return;
-	NSImage *t = nil;
+	
 	if ((element & kICOFamily256Element) == kICOFamily256Element || (element & kICOFamilyAllElements)==kICOFamilyAllElements) {
-		t = [[NSImage alloc] initWithSize:NSMakeSize(256, 256)];
-		[t lockFocus];
-		[im drawInRect:NSMakeRect(0, 0, 256, 256) 
-			  fromRect:NSZeroRect 
-			 operation:NSCompositeSourceOver 
-			  fraction:1.0];
-		[t unlockFocus];
-		[self setImage:t 
+		[im setSize:NSMakeSize(256, 256)];
+		[self setImage:im
 			forElement:kICOFamily256Element];
-		[t release];
 	}
 	if ((element & kICOFamily128Element) == kICOFamily128Element || (element & kICOFamilyAllElements)==kICOFamilyAllElements) {
-		t = [[NSImage alloc] initWithSize:NSMakeSize(128, 128)];
-		
-		[t lockFocus];
-		[im drawInRect:NSMakeRect(0, 0, t.size.width, t.size.height) 
-			  fromRect:NSZeroRect 
-			 operation:NSCompositeSourceOver 
-			  fraction:1.0];
-		[t unlockFocus];
-		[self setImage:t 
+		[im setSize:NSMakeSize(128, 128)];
+		[self setImage:im
 			forElement:kICOFamily128Element];
-		[t release];
-		
 	}
 	if ((element & kICOFamily64Element) == kICOFamily64Element || (element & kICOFamilyAllElements)==kICOFamilyAllElements) {
-		t = [[NSImage alloc] initWithSize:NSMakeSize(64, 64)];
-		
-		[t lockFocus];
-		[im drawInRect:NSMakeRect(0, 0, t.size.width, t.size.height) 
-			  fromRect:NSZeroRect 
-			 operation:NSCompositeSourceOver 
-			  fraction:1.0];
-		[t unlockFocus];
-		[self setImage:t 
+		[im setSize:NSMakeSize(64, 64)];
+		[self setImage:im
 			forElement:kICOFamily64Element];
-		[t release];
 	}
 	if ((element & kICOFamily48Element) == kICOFamily48Element || (element & kICOFamilyAllElements)==kICOFamilyAllElements) {
-		t = [[NSImage alloc] initWithSize:NSMakeSize(48, 48)];
-		
-		[t lockFocus];
-		[im drawInRect:NSMakeRect(0, 0, t.size.width, t.size.height) 
-			  fromRect:NSZeroRect 
-			 operation:NSCompositeSourceOver 
-			  fraction:1.0];
-		[t unlockFocus];
-		[self setImage:t 
+		[im setSize:NSMakeSize(48, 48)];
+		[self setImage:im
 			forElement:kICOFamily48Element];
-		[t release];
 	}
 	if ((element & kICOFamily32Element) == kICOFamily32Element || (element & kICOFamilyAllElements)==kICOFamilyAllElements) {
-		t = [[NSImage alloc] initWithSize:NSMakeSize(32, 32)];
-		
-		[t lockFocus];
-		[im drawInRect:NSMakeRect(0, 0, t.size.width, t.size.height) 
-			  fromRect:NSZeroRect 
-			 operation:NSCompositeSourceOver 
-			  fraction:1.0];
-		[t unlockFocus];
-		[self setImage:t 
+		[im setSize:NSMakeSize(32, 32)];
+		[self setImage:im
 			forElement:kICOFamily32Element];
-		[t release];
 	}
 	if ((element & kICOFamily24Element) == kICOFamily24Element || (element & kICOFamilyAllElements)==kICOFamilyAllElements) {
-		t = [[NSImage alloc] initWithSize:NSMakeSize(24, 24)];
-		
-		[t lockFocus];
-		[im drawInRect:NSMakeRect(0, 0, t.size.width, t.size.height) 
-			  fromRect:NSZeroRect 
-			 operation:NSCompositeSourceOver 
-			  fraction:1.0];
-		[t unlockFocus];
-		[self setImage:t 
+		[im setSize:NSMakeSize(24, 24)];
+		[self setImage:im
 			forElement:kICOFamily24Element];
-		[t release];
 	}
 	if ((element & kICOFamily16Element) == kICOFamily16Element || (element & kICOFamilyAllElements)==kICOFamilyAllElements) {
-		t = [[NSImage alloc] initWithSize:NSMakeSize(16, 16)];
-		[t lockFocus];
-		[im drawInRect:NSMakeRect(0, 0, t.size.width, t.size.height) 
-			  fromRect:NSZeroRect 
-			 operation:NSCompositeSourceOver 
-			  fraction:1.0];
-		[t unlockFocus];
-		[self setImage:t 
+		[im setSize:NSMakeSize(16, 16)];
+		[self setImage:im
 			forElement:kICOFamily16Element];
-		[t release];
 	}	
 }
 - (NSImage*)imageWithAllReps {
@@ -263,9 +207,30 @@ typedef struct IconDir
 		return;
 	if ((element & kICOFamilyAllElements)==kICOFamilyAllElements) {
 		[self setElements:element fromImage:image];
+		return;
 	}
-	[self setData:image.TIFFRepresentation 
-	   forElement:element];
+	NSBitmapImageRep *rep = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
+																	pixelsWide:image.size.width
+																	pixelsHigh:image.size.height
+																 bitsPerSample:8 
+															   samplesPerPixel:4 
+																	  hasAlpha:YES 
+																	  isPlanar:NO 
+																colorSpaceName:NSDeviceRGBColorSpace
+																  bitmapFormat:NSAlphaFirstBitmapFormat
+																   bytesPerRow:4 * image.size.width 
+																  bitsPerPixel:32];
+	NSGraphicsContext *ctx = [NSGraphicsContext graphicsContextWithBitmapImageRep:rep];
+	[NSGraphicsContext saveGraphicsState];
+	[NSGraphicsContext setCurrentContext:ctx];
+	[image drawAtPoint:NSZeroPoint 
+			  fromRect:NSZeroRect 
+			 operation:NSCompositeCopy 
+			  fraction:1.0];
+	[NSGraphicsContext restoreGraphicsState];
+	
+	[self setBitmapImageRep:rep forElement:element];
+	[rep release];
 }
 - (void)setBitmapImageRep:(NSBitmapImageRep*)rep forElement:(kICOFamilyElement)element {
 	if (!rep)
@@ -279,14 +244,14 @@ typedef struct IconDir
 	}
 	if ([self verifyImageOfSize:NSMakeSize(rep.pixelsWide, rep.pixelsHigh) 
 					 forElement:element])
-	{
-		if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)])	// 10.6+ runtime only
 		{
+		if ([rep respondsToSelector:@selector(bitmapImageRepByConvertingToColorSpace:renderingIntent:)])	// 10.6+ runtime only
+			{
 			rep = [rep bitmapImageRepByConvertingToColorSpace:[NSColorSpace genericRGBColorSpace]
 											  renderingIntent:NSColorRenderingIntentPerceptual];
-		}
+			}
 		[elements setObject:rep forKey:[NSNumber numberWithInteger:element]];
-	}
+		}
 }
 - (void)setData:(NSData*)data forElement:(kICOFamilyElement)element {
 	if (!data)
@@ -390,10 +355,10 @@ typedef struct IconDir
         andBuf.width = currentRep.pixelsWide;
         andBuf.rowBytes = currentRep.bytesPerRow;
         andBuf.data = malloc(andSize);
-        
+		
         memcpy(bmpBuf.data, currentRep.bitmapData, bmpSize);
         memset(andBuf.data, 0, andSize);
-
+		
         // Initialize the ICO bitmap header
         bitmapHeader.biSize = 40; // 40 byte header
         bitmapHeader.biWidth = currentRep.pixelsWide;
@@ -465,47 +430,7 @@ typedef struct IconDir
 }
 
 - (void)readFromData:(NSData*)data { // Not yet. Might need help with this one. For now just use NSImage ;) 
-	NSData *header = [data subdataWithRange:NSMakeRange(0, 6)];
-	
-	short count = 0;
-	[header getBytes:&count range:NSMakeRange(sizeof(short)*2, sizeof(short))];
-	short type = 0;
-	[header getBytes:&type range:NSMakeRange(sizeof(short), sizeof(short))];
-	short zero = -1;
-	[header getBytes:&zero range:NSMakeRange(0, sizeof(short))];
-	
-	if (zero != 0 || type != 1 || count < 1) {
-		return; // FAIL
-	}
-	NSData *rest = [data subdataWithRange:NSMakeRange(6, data.length-6)];
-	for (int x = 1;x<=count;x++) {
-			// Each eacher should be 16?
-			// Image header
-		
-		NSData *currentHeader = [rest subdataWithRange:NSMakeRange(16*x, 16)];
-		
-		const char *width = NULL;
-		const char *height = NULL;
-		const char *palette = NULL;
-		const char *reserved = NULL;
-		short planes = 0;
-		short bpp = 0;
-		int size = 0;
-		int offset=0;
-				
-		[currentHeader getBytes:&width range:NSMakeRange(0, 1)];
-		[currentHeader getBytes:&height range:NSMakeRange(1, 1)];
-		[currentHeader getBytes:&palette range:NSMakeRange(2, 1)];
-		[currentHeader getBytes:&reserved range:NSMakeRange(3, 1)];
-		[currentHeader getBytes:&planes range:NSMakeRange(4, 2)];
-		[currentHeader getBytes:&bpp range:NSMakeRange(6, 2)];
-		[currentHeader getBytes:&size range:NSMakeRange(8, 4)];
-		[currentHeader getBytes:&offset range:NSMakeRange(12, 4)];
-		
-			// bpp, planes, size, and offset are pretty much the only things that could possibly matter to use
-		
-		NSLog(@"%d", offset);
-	}
+	return;
 }
 
 #pragma mark -
