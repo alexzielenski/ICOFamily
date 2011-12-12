@@ -27,7 +27,7 @@ I prefer that I am credited in the About box of your app if you used some of my 
 	
 Uses "ICOFamily":http://github.com/alexzielenski/ICOFamily by "Alex Zielenski":http://alexzielenski.com/
 
-All code in this repository is licensed under the </b>MIT<b> license (with the exception of the NSMutableData category; courtesy of Mathew Eis). Here is some legal jargon:
+All code in this repository is licensed under the <b>MIT</b> license (with the exception of the NSMutableData category; courtesy of Mathew Eis). Here is some legal jargon:
 
 Copyright (c) 2010 Alex Zielenski All Rights Reserved
 
