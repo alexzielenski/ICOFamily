@@ -75,7 +75,7 @@ typedef struct IconDir
 #pragma mark Initializers
 - init {
 	if ((self = [super init])) {
-		self.elements=[[NSMutableDictionary alloc] init];
+		elements=[[NSMutableDictionary alloc] init];
 	}
 	return self;
 }
