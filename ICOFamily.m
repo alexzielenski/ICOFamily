@@ -347,8 +347,8 @@ typedef struct IconDir
         BitMapInfoHeader    bitmapHeader;
         IconDirEntry        entryHeader;
         
-        uint32_t            bmpSize = currentRep.pixelsHigh * currentRep.bytesPerRow;
-        uint32_t            andSize = ((((currentRep.pixelsWide) + 31) >> 5) << 2);
+        uint32_t            bmpSize = (uint32_t) (currentRep.pixelsHigh * currentRep.bytesPerRow);
+        uint32_t            andSize = (uint32_t) ((((currentRep.pixelsWide) + 31) >> 5) << 2);
         
         vImage_Buffer       bmpBuf;
         vImage_Buffer       tmpBuf;
@@ -375,8 +375,8 @@ typedef struct IconDir
 		
         // Initialize the ICO bitmap header
         bitmapHeader.biSize = 40; // 40 byte header
-        bitmapHeader.biWidth = currentRep.pixelsWide;
-        bitmapHeader.biHeight = currentRep.pixelsHigh * 2; // double height due to and map
+        bitmapHeader.biWidth = (int32_t) currentRep.pixelsWide;
+        bitmapHeader.biHeight = (int32_t) currentRep.pixelsHigh * 2; // double height due to and map
         bitmapHeader.biPlanes = 1;
         bitmapHeader.biBitCount = currentRep.bitsPerPixel;
         bitmapHeader.biCompression = 0;
@@ -394,7 +394,7 @@ typedef struct IconDir
         entryHeader.wPlanes = currentRep.numberOfPlanes; // must be 1
         entryHeader.wBitCount = currentRep.bitsPerPixel; // must be 32
         entryHeader.dwBytesInRes = bitmapHeader.biSizeImage + 40;
-        entryHeader.dwImageOffset = 16 * elements.count+images.length+data.length;
+        entryHeader.dwImageOffset = (int32_t) (16 * elements.count+images.length+data.length);
         
         // "Write" the ICO header data
         [headers appendLEUInt8:entryHeader.bWidth];
