@@ -113,7 +113,6 @@ typedef enum _kICOFamilyElement {
  @see imageForElement:
  @see dataForElement:
  @see bitmapImageRepForElement:
- @return Returns an autoreleased @c ICOFamily instance.
  */
 - (void)setImage:(NSImage*)image forElement:(kICOFamilyElement)element;
 /** Sets the @ NSBitmapImageRep for the specified @c kICOFamilyElement
